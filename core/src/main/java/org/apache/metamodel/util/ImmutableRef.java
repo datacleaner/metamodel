@@ -21,7 +21,7 @@ package org.apache.metamodel.util;
 import java.util.function.Supplier;
 
 /**
- * Simple/hard implementation of the {@link Ref} interface.
+ * Simple/hard implementation of the {@link Supplier} interface.
  * 
  * @param <E>
  */
