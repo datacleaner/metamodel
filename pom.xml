@@ -43,8 +43,8 @@ under the License.
 	</parent>
 	<scm>
 		<url>https://github.com/datacleaner/metamodel</url>
-		<connection>scm:git:https://github.com/datacleaner/metamodel.git</connection>
-		<developerConnection>scm:git:https://github.com/datacleaner/metamodel.git</developerConnection>
+		<connection>scm:git:git@github.com:datacleaner/metamodel.git</connection>
+		<developerConnection>scm:git:git@github.com:datacleaner/metamodel.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 	<groupId>org.eobjects.metamodel</groupId>
