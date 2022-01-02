@@ -1,24 +1,10 @@
-## Apache MetaModel
+## Apache MetaModel (DataCleaner fork)
 
 MetaModel is a data access framework, providing a common interface for exploration and querying of different types of datastores.
 
 <div>
 <img src="http://metamodel.apache.org/img/logo.png" style="float: right; margin-left: 20px;" alt="MetaModel logo" />
 </div>
-
-### Mailing lists
-
- * Developer list:  dev@metamodel.apache.org
- * User list:  user@metamodel.apache.org
- * Commits list:    commits@metamodel.apache.org
-
-### Website
-
-http://metamodel.apache.org/
-
-### Documentation
-
-Please check out our [wiki for user documentation](https://cwiki.apache.org/confluence/display/METAMODEL).
 
 ### Building the code
 

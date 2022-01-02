@@ -4,22 +4,12 @@ Before anything else, thank you. Thank you for taking some of your precious time
 
 This guide will help you get started with Apache MetaModel's development environment. You'll also find the set of rules you're expected to follow in order to submit improvements and fixes to Apache MetaModel.
 
-### Starter issues to work on
-
-If you're looking for a relevant issue to work on, we suggest you to do the following:
-
-* Join the @dev mailing list
- * To subscribe, send a mail to dev-subscribe@metamodel.apache.org
- * Afterwards communicate to the list via dev@metamodel.apache.org
-* Check JIRA for the [issues with the 'starter' label](https://issues.apache.org/jira/issues/?jql=project%20%3D%20METAMODEL%20AND%20labels%20%3D%20starter).
-* If you have something else on your mind, make yourself heard on the @dev mailing list.
-
 ### Build the code
 
 Fork and clone the repository:
 
 ```
-> git clone https://git-wip-us.apache.org/repos/asf/metamodel.git MetaModel
+> git clone git@github.com:datacleaner/metamodel.git MetaModel
 ```
 
 Try your first build:
@@ -31,22 +21,15 @@ Try your first build:
 
 ### Report issues and ideas
 
-Please use our [JIRA system](https://issues.apache.org/jira/browse/METAMODEL) to report issues and ideas that you might work on. This is a great way to bounce ideas and get input to your contributions.
+Please create and interact with GitHub issues here:
+https://github.com/datacleaner/metamodel/issues
 
 ### Submitting your patch
 
-When submitting your patch, keep in mind that it should be easy for others to review. For this reason we have two preferred ways to submit a patch - you can select the approach that fits you the best:
+When submitting your patch, keep in mind that it should be easy for others to review.
 
- * Use "git diff" to make a .patch file and submit it via our [Review Board](https://reviews.apache.org/groups/metamodel/).
- * Fork our [GitHub mirror](https://github.com/apache/metamodel) and post a [Pull Request](https://github.com/apache/metamodel/pulls).
-
-### About tests
-
-Your patches receive extra points if there's a good set of unittests with it. It's important to ensure that any non-trivial part of our project is well covered with tests.
-
-By default the build will include all self-contained tests, including some quick integration tests to embedded databases like H2, Derby, HSQLDB etc.
-
-Some tests have external dependencies to running servers etc. Those tests can be configured by adding a file called **metamodel-integrationtest-configuration.properties** to your local user's home folder. You can take a look at the [example-metamodel-integrationtest-configuration.properties file](https://raw.githubusercontent.com/apache/metamodel/master/example-metamodel-integrationtest-configuration.properties) to see which properties are available in order to configure the external server connections.
+Please create and interact with GitHub Pull Requests here:
+https://github.com/datacleaner/metamodel/pulls
 
 ### Coding guidelines
 

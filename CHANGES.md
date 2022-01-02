@@ -1,3 +1,7 @@
+### DataCleaner MetaModel
+
+This project is a fork of Apache MetaModel. It's CHANGES are now tracked via GitHub Pull Requests and this file is no longer considered the source of truth.
+
 ### Apache MetaModel [WIP]
 
  * [METAMODEL-1236] - Elasticsearch: not/empty and is/not null do not work for text based columns

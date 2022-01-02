@@ -20,7 +20,7 @@ under the License.
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<parent>
 		<artifactId>MetaModel</artifactId>
-		<groupId>org.apache.metamodel</groupId>
+		<groupId>org.eobjects.metamodel</groupId>
 		<version>5.3.4-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
@@ -126,112 +126,112 @@ under the License.
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-cassandra</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-couchdb</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-csv</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-excel</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-neo4j</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-fixedwidth</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-hadoop</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-dynamodb</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-hbase</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-jdbc</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-json</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>org.apache.metamodel</groupId>
+            <groupId>org.eobjects.metamodel</groupId>
             <artifactId>MetaModel-mongodb-mongo3</artifactId>
             <version>${project.version}</version>
         </dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-mongodb-mongo2</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-openoffice</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-pojo</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-salesforce</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-sugarcrm</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-xml</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-arff</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-elasticsearch-rest</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.metamodel</groupId>
+			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-elasticsearch-native</artifactId>
 			<version>${project.version}</version>
 		</dependency>

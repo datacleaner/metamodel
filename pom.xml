@@ -35,17 +35,19 @@ under the License.
 		<skipTests>false</skipTests>
 	</properties>
 	<parent>
-		<groupId>org.apache</groupId>
-		<artifactId>apache</artifactId>
-		<version>21</version>
+		<!-- Uses the OSS sonatype nexus repository for distribution -->
+		<!-- See https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide -->
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>9</version>
 	</parent>
 	<scm>
-		<url>https://gitbox.apache.org/repos/asf/metamodel.git</url>
-		<connection>https://gitbox.apache.org/repos/asf/metamodel.git</connection>
-		<developerConnection>scm:git:https://gitbox.apache.org/repos/asf/metamodel.git</developerConnection>
+		<url>https://github.com/datacleaner/metamodel</url>
+		<connection>scm:git:https://github.com/datacleaner/metamodel.git</connection>
+		<developerConnection>scm:git:https://github.com/datacleaner/metamodel.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
-	<groupId>org.apache.metamodel</groupId>
+	<groupId>org.eobjects.metamodel</groupId>
 	<artifactId>MetaModel</artifactId>
 	<version>5.3.4-SNAPSHOT</version>
 	<name>MetaModel</name>
@@ -83,29 +85,9 @@ under the License.
 		<module>neo4j</module>
 	</modules>
 	<issueManagement>
-		<system>Jira</system>
-		<url>https://issues.apache.org/jira/browse/METAMODEL</url>
+		<system>GitHub issues</system>
+		<url>https://github.com/datacleaner/metamodel/issues</url>
 	</issueManagement>
-	<mailingLists>
-		<mailingList>
-			<name>Development</name>
-			<post>dev@metamodel.apache.org</post>
-			<subscribe>dev-subscribe@metamodel.apache.org</subscribe>
-			<unsubscribe>dev-unsubscribe@metamodel.apache.org</unsubscribe>
-			<archive>http://mail-archives.apache.org/mod_mbox/metamodel-dev/</archive>
-		</mailingList>
-		<mailingList>
-			<name>Commits</name>
-			<post>commits@metamodel.apache.org</post>
-			<subscribe>commits-subscribe@metamodel.apache.org</subscribe>
-			<unsubscribe>commits-unsubscribe@metamodel.apache.org</unsubscribe>
-			<archive>http://mail-archives.apache.org/mod_mbox/metamodel-commits/</archive>
-		</mailingList>
-	</mailingLists>
-	<organization>
-		<name>The Apache Software Foundation</name>
-		<url>http://www.apache.org/</url>
-	</organization>
 	<developers>
 		<developer>
 			<id>kaspersor</id>
@@ -174,32 +156,6 @@ under the License.
 			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
 		</license>
 	</licenses>
-	<distributionManagement>
-		<repository>
-			<id>apache.releases.https</id>
-			<name>Apache Release Distribution Repository</name>
-			<url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
-		</repository>
-		<snapshotRepository>
-			<id>apache.snapshots.https</id>
-			<name>Apache Development Snapshot Repository</name>
-			<url>https://repository.apache.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
-
-	<repositories>
-		<repository>
-			<id>apache.snapshots</id>
-			<url>https://repository.apache.org/snapshots/</url>
-			<name>Apache Snapshot Repo</name>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</repository>
-	</repositories>
 
 	<build>
 		<plugins>
