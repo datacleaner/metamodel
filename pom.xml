@@ -390,7 +390,6 @@ under the License.
 							<exclude>**/*.iws/**</exclude>
 							<exclude>**/*.ipr/**</exclude>
 							<exclude>**/.idea/**</exclude>
-							<exclude>**/tattletale-filters.properties</exclude>
 							<exclude>**/swagger-ui/**</exclude>
 							<exclude>DEPENDENCIES</exclude>
 							<exclude>DISCLAIMER</exclude>
