@@ -18,7 +18,7 @@
  */
 package org.apache.metamodel.util;
 
-import org.apache.commons.lang.SerializationUtils;
+import org.apache.commons.lang3.SerializationUtils;
 
 import junit.framework.TestCase;
 
