@@ -88,7 +88,7 @@ public class H2databaseTest extends TestCase {
     }
 
     public void testTimestampValueInsertSelect() throws Exception {
-        JdbcTestTemplates.timestampValueInsertSelect(conn, TimeUnit.NANOSECONDS);
+        JdbcTestTemplates.timestampValueInsertSelect(conn, TimeUnit.MILLISECONDS);
     }
 
     public void testUsingSingleUpdates() throws Exception {
@@ -156,13 +156,13 @@ public class H2databaseTest extends TestCase {
         assertEquals("[ID, NAME, AGE]", Arrays.toString(table.getColumnNames().toArray()));
 
         Column idColumn = table.getColumnByName("ID");
-        assertEquals("Column[name=ID,columnNumber=0,type=INTEGER,nullable=false,nativeType=INTEGER,columnSize=10]",
+        assertEquals("Column[name=ID,columnNumber=0,type=INTEGER,nullable=false,nativeType=INTEGER,columnSize=32]",
                 idColumn.toString());
         Column nameColumn = table.getColumnByName("NAME");
-        assertEquals("Column[name=NAME,columnNumber=1,type=VARCHAR,nullable=true,nativeType=VARCHAR,columnSize=255]",
+        assertEquals("Column[name=NAME,columnNumber=1,type=VARCHAR,nullable=true,nativeType=CHARACTER VARYING,columnSize=255]",
                 nameColumn.toString());
         Column ageColumn = table.getColumnByName("AGE");
-        assertEquals("Column[name=AGE,columnNumber=2,type=INTEGER,nullable=true,nativeType=INTEGER,columnSize=10]",
+        assertEquals("Column[name=AGE,columnNumber=2,type=INTEGER,nullable=true,nativeType=INTEGER,columnSize=32]",
                 ageColumn.toString());
 
         Query q = dc.query().from(table).selectCount().and(FunctionType.MAX, ageColumn).and(FunctionType.MIN, ageColumn)
@@ -301,7 +301,7 @@ public class H2databaseTest extends TestCase {
 
         readTable = dc.getDefaultSchema().getTableByName("test_table");
         assertEquals("[ID, NAME, AGE]", Arrays.toString(readTable.getColumnNames().toArray()));
-        assertEquals("[Column[name=ID,columnNumber=0,type=INTEGER,nullable=false,nativeType=INTEGER,columnSize=10]]",
+        assertEquals("[Column[name=ID,columnNumber=0,type=INTEGER,nullable=false,nativeType=INTEGER,columnSize=32]]",
                 Arrays.toString(readTable.getPrimaryKeys().toArray()));
         assertEquals(writtenTableRef.get(), readTable);
 
