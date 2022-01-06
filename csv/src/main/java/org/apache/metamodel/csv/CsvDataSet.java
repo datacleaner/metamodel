@@ -31,6 +31,7 @@ import org.apache.metamodel.schema.Column;
 import org.apache.metamodel.util.FileHelper;
 
 import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 
 /**
  * Streaming DataSet implementation for CSV support
@@ -91,7 +92,7 @@ final class CsvDataSet extends AbstractDataSet {
         final String[] csvValues;
         try {
             csvValues = _reader.readNext();
-        } catch (IOException e) {
+        } catch (IOException | CsvValidationException e) {
             throw new IllegalStateException("Exception reading from file", e);
         }
         if (csvValues == null) {

@@ -49,6 +49,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
 import com.opencsv.ICSVParser;
 
 /**
@@ -306,11 +307,11 @@ public final class CsvDataContext extends QueryPostprocessDataContext implements
 
     protected CSVReader createCsvReader(int skipLines) {
         final Reader reader = FileHelper.getReader(_resource.read(), _configuration.getEncoding());
-        return new CSVReader(reader, skipLines, createParser());
+        return new CSVReaderBuilder(reader).withSkipLines(skipLines).withCSVParser(createParser()).build();
     }
 
     protected CSVReader createCsvReader(BufferedReader reader) {
-        return new CSVReader(reader, CSVReader.DEFAULT_SKIP_LINES, createParser());
+        return new CSVReaderBuilder(reader).withCSVParser(createParser()).build();
     }
 
     @Override
