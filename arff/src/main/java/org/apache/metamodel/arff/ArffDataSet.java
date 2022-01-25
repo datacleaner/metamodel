@@ -35,12 +35,12 @@ import org.apache.metamodel.schema.ColumnType;
 import org.apache.metamodel.util.NumberComparator;
 import org.apache.metamodel.util.Resource;
 
-import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
 import com.opencsv.ICSVParser;
 
 final class ArffDataSet extends AbstractDataSet {
 
-    private final ICSVParser csvParser = new CSVParser(',', '\'');
+    private final ICSVParser csvParser =  new CSVParserBuilder().withSeparator(',') .withQuoteChar('\'').build();
     private final Resource resource;
     private final BufferedReader reader;
     private final List<Column> columns;
