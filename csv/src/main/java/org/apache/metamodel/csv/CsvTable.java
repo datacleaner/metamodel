@@ -42,6 +42,7 @@ import org.apache.metamodel.util.FileHelper;
 import org.apache.metamodel.util.LegacyDeserializationObjectInputStream;
 
 import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 
 final class CsvTable extends AbstractTable {
 
@@ -108,7 +109,7 @@ final class CsvTable extends AbstractTable {
 
             reader.close();
             return buildColumns(columnHeaders);
-        } catch (IOException e) {
+        } catch (IOException | CsvValidationException e) {
             throw new IllegalStateException("Exception reading from resource: "
                     + _schema.getDataContext().getResource().getName(), e);
         } finally {
