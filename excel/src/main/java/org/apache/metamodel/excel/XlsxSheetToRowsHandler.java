@@ -23,7 +23,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.BuiltinFormats;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -31,7 +30,7 @@ import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.FontUnderline;
 import org.apache.poi.ss.usermodel.RichTextString;
 import org.apache.poi.xssf.eventusermodel.XSSFReader;
-import org.apache.poi.xssf.model.SharedStringsTable;
+import org.apache.poi.xssf.model.SharedStrings;
 import org.apache.poi.xssf.model.StylesTable;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
@@ -67,7 +66,7 @@ final class XlsxSheetToRowsHandler extends DefaultHandler {
     private final XlsxRowCallback _callback;
     private final ExcelConfiguration _configuration;
     private final StylesTable _stylesTable;
-    private final SharedStringsTable _sharedStringTable;
+    private final SharedStrings _sharedString;
 
     // variables used to hold information about the current rows
     private int _rowNumber;
@@ -89,7 +88,7 @@ final class XlsxSheetToRowsHandler extends DefaultHandler {
         _callback = callback;
         _configuration = configuration;
 
-        _sharedStringTable = xssfReader.getSharedStringsTable();
+        _sharedString = xssfReader.getSharedStringsTable();
         _stylesTable = xssfReader.getStylesTable();
 
         _value = new StringBuilder();
@@ -190,7 +189,7 @@ final class XlsxSheetToRowsHandler extends DefaultHandler {
             _style.underline();
         }
 
-        if (style.getFillPatternEnum() == FillPatternType.SOLID_FOREGROUND) {
+        if (style.getFillPattern() == FillPatternType.SOLID_FOREGROUND) {
             final XSSFColor fillForegroundXSSFColor = style.getFillForegroundXSSFColor();
             final String argb = fillForegroundXSSFColor.getARGBHex();
             if (argb != null) {
@@ -212,7 +211,7 @@ final class XlsxSheetToRowsHandler extends DefaultHandler {
             }
         }
 
-        switch (style.getAlignmentEnum()) {
+        switch (style.getAlignment()) {
         case LEFT:
             _style.leftAligned();
             break;
@@ -283,13 +282,13 @@ final class XlsxSheetToRowsHandler extends DefaultHandler {
         case SSTINDEX:
             final String sstIndex = _value.toString();
             final int idx = Integer.parseInt(sstIndex);
-            final RichTextString item = _sharedStringTable.getItemAt(idx);
+            final RichTextString item = _sharedString.getItemAt(idx);
             return item.getString();
         case NUMBER:
             final String numberString = _value.toString();
             if (_formatString != null) {
                 final DataFormatter formatter = getDataFormatter();
-                if (HSSFDateUtil.isADateFormat(_formatIndex, _formatString)) {
+                if (DateUtil.isADateFormat(_formatIndex, _formatString)) {
                     final Date date = DateUtil.getJavaDate(Double.parseDouble(numberString));
                     return DateUtils.createDateFormat().format(date);
                 }
