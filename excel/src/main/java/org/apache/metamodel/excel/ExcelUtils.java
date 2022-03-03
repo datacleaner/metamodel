@@ -367,7 +367,7 @@ final class ExcelUtils {
         }
         final CellStyle cellStyle = cell.getCellStyle();
 
-        final int fontIndex = cellStyle.getFontIndexAsInt();
+        final int fontIndex = cellStyle.getFontIndex();
         final Font font = workbook.getFontAt(fontIndex);
         final StyleBuilder styleBuilder = new StyleBuilder();
 

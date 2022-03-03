@@ -26,7 +26,6 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.easymock.EasyMock;
-import org.apache.metamodel.excel.ZeroBasedRowIterator;
 
 public class ZeroBasedRowIteratorTest extends TestCase {
 

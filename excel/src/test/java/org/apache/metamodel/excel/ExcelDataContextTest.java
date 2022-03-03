@@ -23,6 +23,7 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.IntStream;
 
 import org.apache.metamodel.DataContext;
@@ -56,7 +57,10 @@ public class ExcelDataContextTest {
 
     @Rule
     public TestName testName = new TestName();
-    
+
+    @Rule
+    public DefaultLocaleRule defaultLocale = new DefaultLocaleRule(Locale.ENGLISH);
+
     /**
      * Creates a copy of a particular file - to avoid changing of Excel files
      * under source control
