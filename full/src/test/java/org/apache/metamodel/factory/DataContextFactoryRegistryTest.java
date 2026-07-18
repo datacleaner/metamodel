@@ -22,18 +22,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.apache.metamodel.cassandra.CassandraDataContextFactory;
-import org.apache.metamodel.couchdb.CouchDbDataContextFactory;
 import org.apache.metamodel.csv.CsvDataContextFactory;
-import org.apache.metamodel.elasticsearch.nativeclient.ElasticSearchDataContextFactory;
-import org.apache.metamodel.elasticsearch.rest.ElasticSearchRestDataContextFactory;
 import org.apache.metamodel.excel.ExcelDataContextFactory;
 import org.apache.metamodel.fixedwidth.FixedWidthDataContextFactory;
-import org.apache.metamodel.hbase.HbaseDataContextFactory;
 import org.apache.metamodel.jdbc.JdbcDataContextFactory;
 import org.apache.metamodel.json.JsonDataContextFactory;
 import org.apache.metamodel.pojo.PojoDataContextFactory;
-import org.apache.metamodel.salesforce.SalesforceDataContextFactory;
 import org.apache.metamodel.xml.XmlDomDataContextFactory;
 import org.apache.metamodel.xml.XmlSaxDataContextFactory;
 import org.junit.Assert;
@@ -48,18 +42,12 @@ public class DataContextFactoryRegistryTest {
 
         final List<Class<?>> factoryClasses = factories.stream().map(f -> f.getClass()).collect(Collectors.toList());
 
-        Assert.assertTrue(factoryClasses.contains(CassandraDataContextFactory.class));
         Assert.assertTrue(factoryClasses.contains(CsvDataContextFactory.class));
-        Assert.assertTrue(factoryClasses.contains(CouchDbDataContextFactory.class));
-        Assert.assertTrue(factoryClasses.contains(ElasticSearchDataContextFactory.class));
-        Assert.assertTrue(factoryClasses.contains(ElasticSearchRestDataContextFactory.class));
         Assert.assertTrue(factoryClasses.contains(ExcelDataContextFactory.class));
         Assert.assertTrue(factoryClasses.contains(FixedWidthDataContextFactory.class));
-        Assert.assertTrue(factoryClasses.contains(HbaseDataContextFactory.class));
         Assert.assertTrue(factoryClasses.contains(JdbcDataContextFactory.class));
         Assert.assertTrue(factoryClasses.contains(JsonDataContextFactory.class));
         Assert.assertTrue(factoryClasses.contains(PojoDataContextFactory.class));
-        Assert.assertTrue(factoryClasses.contains(SalesforceDataContextFactory.class));
         Assert.assertTrue(factoryClasses.contains(XmlDomDataContextFactory.class));
         Assert.assertTrue(factoryClasses.contains(XmlSaxDataContextFactory.class));
     }

@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.data;
 
-import java.io.Serializable;
 
 /**
  * A {@link Style} represents the visual presentation ('styling') attributes of
@@ -31,7 +30,7 @@ import java.io.Serializable;
  * Creation of {@link Style} objects is handled by the {@link StyleBuilder}
  * class.
  */
-public interface Style extends Serializable {
+public interface Style  {
 
 	/**
 	 * A style object used for values without styling, "unstyled" values or
@@ -52,7 +51,7 @@ public interface Style extends Serializable {
 	 * Creation of {@link Color} objects is handled by the static
 	 * {@link StyleBuilder}.createColor(...) methods.
 	 */
-	public static interface Color extends Serializable {
+	public static interface Color  {
 
 		public short getRed();
 

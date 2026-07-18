@@ -18,20 +18,13 @@
  */
 package org.apache.metamodel.data;
 
-import java.io.ObjectInputStream;
-import java.io.ObjectInputStream.GetField;
-import java.lang.reflect.Field;
 import java.util.Arrays;
-import java.util.List;
 
-import org.apache.metamodel.query.SelectItem;
 
 /**
  * Default Row implementation. Holds values in memory.
  */
 public final class DefaultRow extends AbstractRow implements Row {
-
-    private static final long serialVersionUID = 1L;
 
     private final DataSetHeader _header;
     private final Object[] _values;
@@ -116,43 +109,5 @@ public final class DefaultRow extends AbstractRow implements Row {
     @Override
     protected DataSetHeader getHeader() {
         return _header;
-    }
-
-    /**
-     * Method invoked by the Java serialization framework while deserializing
-     * Row instances. Since previous versions of MetaModel did not use a
-     * DataSetHeader, but had a reference to a List&lt;SelectItem&gt;, this
-     * deserialization is particularly tricky. We check if the items variable is
-     * there, and if it is, we convert it to a header instead.
-     * 
-     * @param stream
-     * @throws Exception
-     */
-    private void readObject(ObjectInputStream stream) throws Exception {
-        GetField fields = stream.readFields();
-
-        try {
-            // backwards compatible deserialization, convert items to header
-            Object items = fields.get("_items", null);
-            @SuppressWarnings("unchecked")
-            List<SelectItem> itemsList = (List<SelectItem>) items;
-            SimpleDataSetHeader header = new SimpleDataSetHeader(itemsList);
-            Field field = getClass().getDeclaredField("_header");
-            field.setAccessible(true);
-            field.set(this, header);
-        } catch (IllegalArgumentException e) {
-            // no backwards compatible deserialization needed.
-            setWhileDeserializing(fields, "_header");
-        }
-
-        setWhileDeserializing(fields, "_values");
-        setWhileDeserializing(fields, "_styles");
-    }
-
-    private void setWhileDeserializing(GetField fields, String fieldName) throws Exception {
-        Object value = fields.get(fieldName, null);
-        Field field = getClass().getDeclaredField(fieldName);
-        field.setAccessible(true);
-        field.set(this, value);
     }
 }

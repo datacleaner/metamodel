@@ -18,14 +18,13 @@
  */
 package org.apache.metamodel.query;
 
-import java.io.Serializable;
 
 /**
  * Interface for items in a query. All QueryItems reside within a QueryClause.
  * 
  * @see AbstractQueryClause
  */
-public interface QueryItem extends Serializable {
+public interface QueryItem  {
 
 	public QueryItem setQuery(Query query);
 

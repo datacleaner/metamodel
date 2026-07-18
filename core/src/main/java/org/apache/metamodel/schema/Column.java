@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.schema;
 
-import java.io.Serializable;
 
 import org.apache.metamodel.annotations.InterfaceStability;
 
@@ -29,7 +28,7 @@ import org.apache.metamodel.annotations.InterfaceStability;
  * @see Table
  */
 @InterfaceStability.Stable
-public interface Column extends Comparable<Column>, Serializable, NamedStructure {
+public interface Column extends Comparable<Column>, NamedStructure {
 
     /**
      * Gets the name of this Column

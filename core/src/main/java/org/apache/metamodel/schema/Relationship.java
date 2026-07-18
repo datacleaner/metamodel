@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.schema;
 
-import java.io.Serializable;
 import java.util.List;
 
 import org.apache.metamodel.annotations.InterfaceStability;
@@ -31,7 +30,7 @@ import org.apache.metamodel.annotations.InterfaceStability;
  * @see Column
  */
 @InterfaceStability.Stable
-public interface Relationship extends Serializable, Comparable<Relationship> {
+public interface Relationship extends Comparable<Relationship> {
 
 	/**
 	 * Gets the table of the primary key column(s).

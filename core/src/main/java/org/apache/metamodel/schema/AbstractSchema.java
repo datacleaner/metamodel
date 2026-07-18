@@ -34,7 +34,6 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractSchema implements Schema {
 
-    private static final long serialVersionUID = 1L;
 
     private static final Logger logger = LoggerFactory.getLogger(AbstractSchema.class);
 

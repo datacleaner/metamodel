@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.schema;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -30,10 +29,8 @@ import java.util.List;
  * 
  * @see Table
  */
-public class MutableSchema extends AbstractSchema implements Serializable,
-		Schema {
+public class MutableSchema extends AbstractSchema implements Schema {
 
-	private static final long serialVersionUID = 4465197783868238863L;
 
 	private String _name;
 	private final List<Table> _tables;

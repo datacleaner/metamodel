@@ -24,7 +24,6 @@ package org.apache.metamodel.schema;
  */
 public abstract class AbstractColumn implements Column {
 
-    private static final long serialVersionUID = 1L;
 
     @Override
     public final String getQuotedName() {

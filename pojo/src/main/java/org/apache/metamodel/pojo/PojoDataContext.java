@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.pojo;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -46,9 +45,8 @@ import org.apache.metamodel.util.SimpleTableDef;
  * A {@link DataContext} used to serve MetaModel support for collections of Java
  * objects and key/value maps.
  */
-public class PojoDataContext extends QueryPostprocessDataContext implements UpdateableDataContext, Serializable {
+public class PojoDataContext extends QueryPostprocessDataContext implements UpdateableDataContext {
 
-    private static final long serialVersionUID = 1L;
     
     public static final String DEFAULT_SCHEMA_NAME = "Schema";
 

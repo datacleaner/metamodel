@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.data;
 
-import java.io.Serializable;
 import java.util.List;
 
 import org.apache.metamodel.query.SelectItem;
@@ -31,7 +30,7 @@ import org.apache.metamodel.schema.Column;
  * @see DataSet
  * @see SelectItem
  */
-public interface Row extends Serializable {
+public interface Row  {
 
     /**
      * Gets the value of the provided SelectItem.

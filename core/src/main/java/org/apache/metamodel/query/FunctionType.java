@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.query;
 
-import java.io.Serializable;
 
 import org.apache.metamodel.schema.ColumnType;
 
@@ -27,7 +26,7 @@ import org.apache.metamodel.schema.ColumnType;
  *
  * @see SelectItem
  */
-public interface FunctionType extends Serializable {
+public interface FunctionType  {
 
     public static final AggregateFunction COUNT = new CountAggregateFunction();
     public static final AggregateFunction AVG = new AverageAggregateFunction();

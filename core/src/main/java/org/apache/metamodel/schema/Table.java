@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.schema;
 
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -32,7 +31,7 @@ import org.apache.metamodel.annotations.InterfaceStability;
  * @see Column
  */
 @InterfaceStability.Stable
-public interface Table extends Comparable<Table>, Serializable, NamedStructure {
+public interface Table extends Comparable<Table>, NamedStructure {
 
     /**
      * Gets the name of this Table

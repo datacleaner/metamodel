@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.schema;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -32,9 +31,8 @@ import java.util.List;
  * @see Column
  * @see Relationship
  */
-public class MutableTable extends AbstractTable implements Serializable {
+public class MutableTable extends AbstractTable {
 
-    private static final long serialVersionUID = -5094888465714027354L;
     protected String _name;
     protected TableType _type;
     protected String _remarks;

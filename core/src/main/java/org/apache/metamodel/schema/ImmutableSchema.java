@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.schema;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -27,10 +26,9 @@ import java.util.List;
 /**
  * An immutable implementation of the {@link Schema} interface.
  */
-public final class ImmutableSchema extends AbstractSchema implements
-		Serializable {
+public final class ImmutableSchema extends AbstractSchema
+	{
 
-	private static final long serialVersionUID = 1L;
 
 	private final List<ImmutableTable> tables = new ArrayList<ImmutableTable>();
 	private String name;

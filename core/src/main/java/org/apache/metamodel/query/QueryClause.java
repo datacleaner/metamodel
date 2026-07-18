@@ -18,10 +18,9 @@
  */
 package org.apache.metamodel.query;
 
-import java.io.Serializable;
 import java.util.List;
 
-public interface QueryClause<E> extends Serializable {
+public interface QueryClause<E>  {
 
     public QueryClause<E> setItems(@SuppressWarnings("unchecked") E... items);
 
