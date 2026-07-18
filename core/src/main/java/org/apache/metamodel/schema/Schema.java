@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.schema;
 
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -33,7 +32,7 @@ import org.apache.metamodel.annotations.InterfaceStability;
  * @see Table
  */
 @InterfaceStability.Stable
-public interface Schema extends Comparable<Schema>, Serializable, NamedStructure {
+public interface Schema extends Comparable<Schema>, NamedStructure {
 
 	/**
 	 * Gets the name of this Schema

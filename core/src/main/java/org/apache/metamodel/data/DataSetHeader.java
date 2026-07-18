@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.data;
 
-import java.io.Serializable;
 import java.util.List;
 
 import org.apache.metamodel.query.SelectItem;
@@ -28,7 +27,7 @@ import org.apache.metamodel.schema.Column;
  * Represents the header of a {@link DataSet}, which define the
  * columns/SelectItems of it.
  */
-public interface DataSetHeader extends Serializable {
+public interface DataSetHeader  {
 
     public List<SelectItem> getSelectItems();
 

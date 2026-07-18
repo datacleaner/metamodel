@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.schema;
 
-import java.io.Serializable;
 
 /**
  * Represents a column and it's metadata description. Columns reside within a
@@ -27,9 +26,8 @@ import java.io.Serializable;
  * @see MutableTable
  * @see Relationship
  */
-public class MutableColumn extends AbstractColumn implements Serializable {
+public class MutableColumn extends AbstractColumn {
 
-    private static final long serialVersionUID = -353183696233890927L;
     private int _columnNumber;
     private String _name;
     private ColumnType _type;

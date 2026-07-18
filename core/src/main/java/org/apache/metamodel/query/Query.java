@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.query;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,9 +65,8 @@ import org.apache.metamodel.util.NumberComparator;
  * @see DataContext
  */
 @InterfaceStability.Stable
-public final class Query extends BaseObject implements Cloneable, Serializable {
+public final class Query extends BaseObject implements Cloneable {
 
-    private static final long serialVersionUID = -5976325207498574216L;
 
     private final SelectClause _selectClause;
     private final FromClause _fromClause;

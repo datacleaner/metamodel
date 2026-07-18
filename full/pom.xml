@@ -30,17 +30,7 @@ under the License.
 	<dependencies>
 		<dependency>
 			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-cassandra</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-core</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-couchdb</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -55,27 +45,7 @@ under the License.
 		</dependency>
 		<dependency>
 			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-neo4j</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-fixedwidth</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-hadoop</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-dynamodb</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-hbase</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -89,33 +59,8 @@ under the License.
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>org.eobjects.metamodel</groupId>
-            <artifactId>MetaModel-mongodb-mongo3</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-mongodb-mongo2</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-openoffice</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-pojo</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-salesforce</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-sugarcrm</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -126,16 +71,6 @@ under the License.
 		<dependency>
 			<groupId>org.eobjects.metamodel</groupId>
 			<artifactId>MetaModel-arff</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-elasticsearch-rest</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eobjects.metamodel</groupId>
-			<artifactId>MetaModel-elasticsearch-native</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<!-- Test dependencies -->

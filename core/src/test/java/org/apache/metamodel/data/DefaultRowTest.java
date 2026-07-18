@@ -18,20 +18,10 @@
  */
 package org.apache.metamodel.data;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.lang.reflect.Field;
-import java.util.List;
 
 import org.apache.metamodel.query.SelectItem;
-import org.apache.metamodel.schema.Column;
-import org.apache.metamodel.schema.ColumnType;
 import org.apache.metamodel.schema.MutableColumn;
-import org.apache.metamodel.util.FileHelper;
-import org.apache.metamodel.util.LegacyDeserializationObjectInputStream;
 
 import junit.framework.TestCase;
 
@@ -40,55 +30,6 @@ public class DefaultRowTest extends TestCase {
     private SelectItem[] items = new SelectItem[] { new SelectItem(new MutableColumn("foo")),
             new SelectItem(new MutableColumn("bar")) };
     private Object[] values = new Object[] { "foo", "bar" };
-
-    public void testSerializeAndDeserialize() throws Exception {
-        DefaultRow row = new DefaultRow(new SimpleDataSetHeader(items), values);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(baos);
-        oos.writeObject(row);
-        oos.close();
-
-        ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
-        ObjectInputStream ois = new ObjectInputStream(bais);
-        Object deserialized = ois.readObject();
-
-        assertEquals("Row[values=[foo, bar]]", deserialized.toString());
-        assertEquals(row, deserialized);
-    }
-
-    public void testDeserializeBackwardsCompatible() throws Exception {
-        Object obj;
-        FileInputStream fileIn = new FileInputStream("src/test/resources/metamodel-3.0-default-row.ser");
-        try {
-            ObjectInputStream ois = new LegacyDeserializationObjectInputStream(fileIn);
-            obj = ois.readObject();
-            ois.close();
-        } finally {
-            FileHelper.safeClose(fileIn);
-        }
-
-        assertTrue(obj instanceof Row);
-        assertTrue(obj instanceof DefaultRow);
-
-        Row row = (Row) obj;
-        assertEquals(2, row.size());
-        List<SelectItem> selectItems = row.getSelectItems();
-        assertEquals("foo", selectItems.get(0).toString());
-        assertEquals("bar", selectItems.get(1).toString());
-
-        assertEquals("foo", row.getValue(0));
-        assertEquals("bar", row.getValue(1));
-
-        assertEquals(Style.NO_STYLE, row.getStyle(0));
-        assertEquals(Style.NO_STYLE, row.getStyle(1));
-
-        Column column = selectItems.get(0).getColumn();
-        assertNotNull(column);
-        
-        // the columns used to create the object did not have column types assigned.
-        ColumnType type = column.getType();
-        assertNull(type);
-    }
 
     public void testGetValueOfColumn() throws Exception {
         DefaultRow row = new DefaultRow(new SimpleDataSetHeader(items), values);

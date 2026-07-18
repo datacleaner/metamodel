@@ -55,9 +55,7 @@ public class OperatorTypeImpl implements OperatorType {
         }
         if (obj instanceof OperatorType) {
             // we only require another OperatorType, not necessarily an _Impl_.
-            // This is to allow other implementations that wrap this. For
-            // instance the implementation provided by
-            // LegacyDeserializationObjectInputStream.
+            // This is to allow other implementations that wrap this.
             final OperatorType other = (OperatorType) obj;
             return isSpaceDelimited() == other.isSpaceDelimited() && Objects.equals(toSql(), other.toSql());
         }

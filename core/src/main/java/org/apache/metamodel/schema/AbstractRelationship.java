@@ -25,7 +25,6 @@ import org.apache.metamodel.util.BaseObject;
 public abstract class AbstractRelationship extends BaseObject implements
 		Relationship {
     
-    private static final long serialVersionUID = 1L;
 
 	protected static Table checkSameTable(List<Column> columns) {
 		if (columns == null || columns.size() == 0) {

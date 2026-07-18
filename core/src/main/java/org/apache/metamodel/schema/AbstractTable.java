@@ -30,7 +30,6 @@ import java.util.stream.Collectors;
  */
 public abstract class AbstractTable implements Table {
 
-    private static final long serialVersionUID = 1L;
 
     private static final Logger logger = LoggerFactory.getLogger(AbstractTable.class);
 

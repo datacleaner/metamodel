@@ -18,14 +18,13 @@
  */
 package org.apache.metamodel.schema.naming;
 
-import java.io.Serializable;
 
 /**
  * A strategy that defines how columns are logically named. Such strategies are
  * mostly used when a particular datastore is not itself intrinsically
  * specifying the column name.
  */
-public interface ColumnNamingStrategy extends Serializable {
+public interface ColumnNamingStrategy  {
     
     public ColumnNamingSession startColumnNamingSession();
 }

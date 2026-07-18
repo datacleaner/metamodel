@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.factory;
 
-import java.io.Serializable;
 import java.net.URI;
 import java.util.Map;
 
@@ -28,7 +27,7 @@ import org.apache.metamodel.util.Resource;
  * Represents the {@link Serializable} properties used to fully describe and
  * construct a {@link Resource}.
  */
-public interface ResourceProperties extends Serializable {
+public interface ResourceProperties  {
 
     URI getUri();
 

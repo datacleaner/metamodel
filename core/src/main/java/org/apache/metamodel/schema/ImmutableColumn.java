@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.schema;
 
-import java.io.Serializable;
 
 /**
  * Immutable implementation of the Column interface.
@@ -28,9 +27,8 @@ import java.io.Serializable;
  * 
  * @see ImmutableSchema
  */
-public final class ImmutableColumn extends AbstractColumn implements Serializable {
+public final class ImmutableColumn extends AbstractColumn {
 
-    private static final long serialVersionUID = 1L;
 
     private final int columnNumber;
     private final ColumnType type;

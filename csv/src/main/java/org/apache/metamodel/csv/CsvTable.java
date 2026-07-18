@@ -19,8 +19,6 @@
 package org.apache.metamodel.csv;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -39,14 +37,11 @@ import org.apache.metamodel.schema.naming.ColumnNamingContextImpl;
 import org.apache.metamodel.schema.naming.ColumnNamingSession;
 import org.apache.metamodel.schema.naming.ColumnNamingStrategy;
 import org.apache.metamodel.util.FileHelper;
-import org.apache.metamodel.util.LegacyDeserializationObjectInputStream;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
 final class CsvTable extends AbstractTable {
-
-    private static final long serialVersionUID = 1L;
 
     private final CsvSchema _schema;
     private final String _tableName;
@@ -166,18 +161,5 @@ final class CsvTable extends AbstractTable {
     @Override
     public String getQuote() {
         return null;
-    }
-
-    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-        final GetField getFields = stream.readFields();
-        Object columns = getFields.get("_columns", null);
-        if (columns instanceof Column[]) {
-            columns = Arrays.<Column> asList((Column[]) columns);
-        }
-        final Object schema = getFields.get("_schema", null);
-        final Object tableName = getFields.get("_tableName", null);
-        LegacyDeserializationObjectInputStream.setField(CsvTable.class, this, "_columns", columns);
-        LegacyDeserializationObjectInputStream.setField(CsvTable.class, this, "_schema", schema);
-        LegacyDeserializationObjectInputStream.setField(CsvTable.class, this, "_tableName", tableName);
     }
 }

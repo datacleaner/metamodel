@@ -25,7 +25,6 @@ import static org.apache.metamodel.schema.SuperColumnType.NUMBER_TYPE;
 import static org.apache.metamodel.schema.SuperColumnType.OTHER_TYPE;
 import static org.apache.metamodel.schema.SuperColumnType.TIME_TYPE;
 
-import java.io.Serializable;
 import java.math.BigInteger;
 import java.net.InetAddress;
 import java.sql.Blob;
@@ -44,7 +43,7 @@ import org.apache.metamodel.util.HasName;
  * Represents the data-type of columns.
  */
 @InterfaceStability.Stable
-public interface ColumnType extends HasName, Serializable {
+public interface ColumnType extends HasName {
 
     /*
      * Literal

@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.factory;
 
-import java.io.Serializable;
 import java.util.Map;
 
 import javax.sql.DataSource;
@@ -31,7 +30,7 @@ import org.apache.metamodel.util.SimpleTableDef;
  * Represents the {@link Serializable} properties used to fully describe and
  * construct a {@link DataContext}.
  */
-public interface DataContextProperties extends Serializable {
+public interface DataContextProperties  {
 
     /**
      * Gets the type of {@link DataContext}, such as "csv" or "jdbc".

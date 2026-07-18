@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.schema;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -32,9 +31,8 @@ import java.util.List;
  * 
  * @see ImmutableSchema
  */
-final class ImmutableTable extends AbstractTable implements Serializable {
+final class ImmutableTable extends AbstractTable {
 
-	private static final long serialVersionUID = 1L;
 
 	private final List<ImmutableColumn> columns = new ArrayList<ImmutableColumn>();
 	private final List<ImmutableRelationship> relationships = new ArrayList<ImmutableRelationship>();

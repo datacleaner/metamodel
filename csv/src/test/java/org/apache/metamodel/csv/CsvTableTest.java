@@ -25,41 +25,14 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
-import org.apache.commons.lang3.SerializationUtils;
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.schema.Schema;
 import org.apache.metamodel.schema.Table;
-import org.apache.metamodel.util.LegacyDeserializationObjectInputStream;
 import org.junit.Test;
 
 public class CsvTableTest {
 
-    @Test
-    public void testDeserializeOldTable() throws Exception {
-        final File file = new File("src/test/resources/MetaModel-4.6.0-CsvTable.ser");
-        try (LegacyDeserializationObjectInputStream in =
-                new LegacyDeserializationObjectInputStream(new FileInputStream(file))) {
-            final Object object = in.readObject();
 
-            assertPeopleCsv(object);
-        }
-    }
-
-    @Test
-    public void testSerializeAndDeserializeCurrentVersion() throws Exception {
-        final DataContext dc = new CsvDataContext(new File("src/test/resources/csv_people.csv"));
-        final Table table1 = dc.getDefaultSchema().getTables().get(0);
-        assertPeopleCsv(table1);
-
-        final byte[] bytes = SerializationUtils.serialize(table1);
-
-        try (LegacyDeserializationObjectInputStream in =
-                new LegacyDeserializationObjectInputStream(new ByteArrayInputStream(bytes))) {
-            final Object object = in.readObject();
-
-            assertPeopleCsv(object);
-        }
-    }
 
     private void assertPeopleCsv(Object object) {
         assertTrue(object instanceof CsvTable);

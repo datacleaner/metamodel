@@ -18,7 +18,6 @@
  */
 package org.apache.metamodel.util;
 
-import java.io.Serializable;
 import java.util.Arrays;
 
 import org.apache.metamodel.DataContext;
@@ -34,9 +33,8 @@ import org.apache.metamodel.schema.TableType;
  * {@link DataContext} is unable to detect/discover the table structure and
  * needs some basic input around expected table structures.
  */
-public class SimpleTableDef implements Serializable, HasName {
+public class SimpleTableDef implements HasName {
 
-    private static final long serialVersionUID = 1L;
 
     private final String _name;
     private final String[] _columnNames;
