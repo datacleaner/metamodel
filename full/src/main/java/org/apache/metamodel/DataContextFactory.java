@@ -49,7 +49,6 @@ import org.apache.metamodel.pojo.PojoDataContext;
 import org.apache.metamodel.pojo.TableDataProvider;
 import org.apache.metamodel.salesforce.SalesforceDataContext;
 import org.apache.metamodel.schema.TableType;
-import org.apache.metamodel.sugarcrm.SugarCrmDataContext;
 import org.apache.metamodel.util.FileHelper;
 import org.apache.metamodel.util.Resource;
 import org.apache.metamodel.util.SimpleTableDef;
@@ -122,24 +121,6 @@ public class DataContextFactory {
      */
     public static DataContext createSalesforceDataContext(String username, String password, String securityToken) {
         return new SalesforceDataContext(username, password, securityToken);
-    }
-
-    /**
-     * Create a DataContext that connects to a SugarCRM system.
-     * 
-     * @param baseUrl
-     *            the base URL of the system, e.g. http://localhost/sugarcrm
-     * @param username
-     *            the SugarCRM username
-     * @param password
-     *            the SugarCRM password
-     * @param applicationName
-     *            the name of the application you are connecting with
-     * @return a DataContext object that matches the request
-     */
-    public static DataContext createSugarCrmDataContext(String baseUrl, String username, String password,
-            String applicationName) {
-        return new SugarCrmDataContext(baseUrl, username, password, applicationName);
     }
 
     /**

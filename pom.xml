@@ -84,7 +84,6 @@ under the License.
 		<module>couchdb</module>
 		<module>openoffice</module>
 		<module>salesforce</module>
-		<module>sugarcrm</module>
 		<module>full</module>
 		<module>spring</module>
 		<module>neo4j</module>
@@ -254,7 +253,6 @@ under the License.
 					</execution>
 				</executions>
 				<configuration>
-					<excludePackageNames>com.sugarcrm.ws.soap</excludePackageNames>
 					<doclint>none</doclint>
 				</configuration>
 			</plugin>
