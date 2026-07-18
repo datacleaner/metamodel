@@ -9,7 +9,6 @@ MetaModel is a Java library that provides a unified querying and schema model ov
 - **ArtifactId:** `MetaModel`
 - **Version:** `5.3.7-SNAPSHOT`
 - **Java level:** 21 (`source`/`target` in root POM)
-- **Parent POM:** `org.sonatype.oss:oss-parent:9` (Sonatype OSS distribution)
 
 ## Module Layout
 Standard Maven multi-module project. Modules in root POM:
@@ -48,6 +47,7 @@ If you add a new `DataContextFactory`, register it under the correct service fil
 
 ## Key Conventions
 1. **Minimum changes policy:** The project owner prefers focused PRs. Avoid refactoring logic when doing mechanical changes.
+2. **No automatic git push:** All `git push` operations must be explicitly requested by the user. Never push commits automatically.
 2. **Tests:** Uses JUnit 4 and EasyMock. Many JDBC integration tests exist but are gated behind configuration properties (not run by default).
 3. **License headers:** Apache License 2.0. `apache-rat-plugin` enforces headers; if you create new files, include the standard header.
 4. **Compiler args:** `--add-opens=java.base/java.lang=ALL_UNNAMED --add-opens=java.base/java.io=ALL_UNNAMED` passed to Surefire for reflection-heavy tests on Java 21.
