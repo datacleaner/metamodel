@@ -32,7 +32,7 @@ under the License.
 		<junit.version>4.13.2</junit.version>
 		<guava.version>31.0.1-jre</guava.version>
 		<jackson.version>2.13.1</jackson.version>
-		<easymock.version>5.5.0</easymock.version>
+		<easymock.version>5.6.0</easymock.version>
 		<httpcomponents.version>4.5.13</httpcomponents.version>
 		<docker-maven-plugin.version>0.23.0</docker-maven-plugin.version>
 		<skipTests>false</skipTests>
@@ -197,6 +197,9 @@ under the License.
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>--add-opens=java.base/java.lang=ALL_UNNAMED --add-opens=java.base/java.io=ALL_UNNAMED</argLine>
+				</configuration>
 			</plugin>
 
 			<plugin>
