@@ -37,13 +37,6 @@ under the License.
 		<docker-maven-plugin.version>0.23.0</docker-maven-plugin.version>
 		<skipTests>false</skipTests>
 	</properties>
-	<parent>
-		<!-- Uses the OSS sonatype nexus repository for distribution -->
-		<!-- See https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide -->
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>9</version>
-	</parent>
 	<scm>
 		<url>https://github.com/datacleaner/metamodel</url>
 		<connection>scm:git:git@github.com:datacleaner/metamodel.git</connection>
