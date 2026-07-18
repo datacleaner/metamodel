@@ -1,0 +1,2 @@
+org.datacleaner.metamodel.xml.XmlSaxDataContextFactory
+org.datacleaner.metamodel.xml.XmlDomDataContextFactory

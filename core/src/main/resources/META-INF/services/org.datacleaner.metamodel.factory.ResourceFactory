@@ -1,0 +1,4 @@
+org.datacleaner.metamodel.factory.FileResourceFactory
+org.datacleaner.metamodel.factory.ClasspathResourceFactory
+org.datacleaner.metamodel.factory.UrlResourceFactory
+org.datacleaner.metamodel.factory.InMemoryResourceFactory

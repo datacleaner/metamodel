@@ -9,7 +9,7 @@
 		</layout>
 	</appender>
 
-	<logger name="org.apache.metamodel">
+	<logger name="org.datacleaner.metamodel">
 		<level value="warn" />
 	</logger>
 

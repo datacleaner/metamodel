@@ -50,7 +50,7 @@ under the License.
 		<developerConnection>scm:git:git@github.com:datacleaner/metamodel.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
-	<groupId>org.eobjects.metamodel</groupId>
+	<groupId>org.datacleaner.metamodel</groupId>
 	<artifactId>MetaModel</artifactId>
 	<version>5.3.7-SNAPSHOT</version>
 	<name>MetaModel</name>
