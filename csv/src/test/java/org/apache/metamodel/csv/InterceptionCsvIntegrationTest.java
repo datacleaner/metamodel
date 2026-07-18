@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.metamodel.intercept;
+package org.apache.metamodel.csv;
 
 import java.io.File;
 import java.util.Arrays;
@@ -30,6 +30,10 @@ import org.apache.metamodel.create.TableCreationBuilder;
 import org.apache.metamodel.csv.CsvDataContext;
 import org.apache.metamodel.data.DataSet;
 import org.apache.metamodel.insert.RowInsertionBuilder;
+import org.apache.metamodel.intercept.InterceptableDataContext;
+import org.apache.metamodel.intercept.Interceptors;
+import org.apache.metamodel.intercept.RowInsertionInterceptor;
+import org.apache.metamodel.intercept.TableCreationInterceptor;
 import org.apache.metamodel.schema.Table;
 
 public class InterceptionCsvIntegrationTest extends TestCase {

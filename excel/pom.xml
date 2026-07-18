@@ -26,6 +26,17 @@ under the License.
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>MetaModel-excel</artifactId>
 	<name>MetaModel module for Excel spreadsheets</name>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>--add-opens=java.base/java.lang=ALL_UNNAMED --add-opens=java.base/java.io=ALL_UNNAMED --add-opens=org.apache.poi.ooxml/org.apache.poi.xssf.streaming=org.apache.metamodel.excel</argLine>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<dependencies>
 		<dependency>
 			<groupId>org.eobjects.metamodel</groupId>
