@@ -27,6 +27,21 @@ under the License.
 	<artifactId>MetaModel-full</artifactId>
 	<name>MetaModel full package, including DataContext factories</name>
 	<description>The full MetaModel package including all supported datastores</description>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Automatic-Module-Name>org.apache.metamodel.full</Automatic-Module-Name>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<dependencies>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
