@@ -1,3 +1,10 @@
+## [5.3.8](https://github.com/datacleaner/metamodel/compare/MetaModel-5.3.7...MetaModel-5.3.8) (2026-07-26)
+
+
+### Bug Fixes
+
+* repair semantic-release pipeline for Maven artifact publishing ([#13](https://github.com/datacleaner/metamodel/issues/13)) ([def052a](https://github.com/datacleaner/metamodel/commit/def052ad52a38f2f57a53a7a99d82b8e1f8e491a))
+
 ## [5.3.7](https://github.com/datacleaner/metamodel/compare/MetaModel-5.3.6...MetaModel-5.3.7) (2026-07-18)
 
 
