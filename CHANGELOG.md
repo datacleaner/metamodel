@@ -1,3 +1,10 @@
+## [5.3.9](https://github.com/datacleaner/metamodel/compare/MetaModel-5.3.8...MetaModel-5.3.9) (2026-07-26)
+
+
+### Bug Fixes
+
+* Release again ([316508e](https://github.com/datacleaner/metamodel/commit/316508e4542ec04a33ee7a8ead5c3015d462e2ed))
+
 ## [5.3.8](https://github.com/datacleaner/metamodel/compare/MetaModel-5.3.7...MetaModel-5.3.8) (2026-07-26)
 
 
