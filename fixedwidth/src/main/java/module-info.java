@@ -16,13 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-module org.apache.metamodel.fixedwidth {
-    requires org.apache.metamodel;
+module org.datacleaner.metamodel.fixedwidth {
+    requires org.datacleaner.metamodel;
     requires org.slf4j;
-    requires static org.apache.metamodel.csv;
+    requires static org.datacleaner.metamodel.csv;
 
-    exports org.apache.metamodel.fixedwidth;
+    exports org.datacleaner.metamodel.fixedwidth;
 
-    provides org.apache.metamodel.factory.DataContextFactory
-        with org.apache.metamodel.fixedwidth.FixedWidthDataContextFactory;
+    provides org.datacleaner.metamodel.factory.DataContextFactory
+        with org.datacleaner.metamodel.fixedwidth.FixedWidthDataContextFactory;
 }

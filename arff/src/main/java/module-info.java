@@ -16,14 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-module org.apache.metamodel.arff {
-    requires org.apache.metamodel;
+module org.datacleaner.metamodel.arff {
+    requires org.datacleaner.metamodel;
     requires org.slf4j;
     requires com.google.common;
     requires com.opencsv;
 
-    exports org.apache.metamodel.arff;
+    exports org.datacleaner.metamodel.arff;
 
-    provides org.apache.metamodel.factory.DataContextFactory
-        with org.apache.metamodel.arff.ArffDataContextFactory;
+    provides org.datacleaner.metamodel.factory.DataContextFactory
+        with org.datacleaner.metamodel.arff.ArffDataContextFactory;
 }

@@ -16,14 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-module org.apache.metamodel.json {
-    requires org.apache.metamodel;
+module org.datacleaner.metamodel.json {
+    requires org.datacleaner.metamodel;
     requires org.slf4j;
     requires com.fasterxml.jackson.core;
     requires com.fasterxml.jackson.databind;
 
-    exports org.apache.metamodel.json;
+    exports org.datacleaner.metamodel.json;
 
-    provides org.apache.metamodel.factory.DataContextFactory
-        with org.apache.metamodel.json.JsonDataContextFactory;
+    provides org.datacleaner.metamodel.factory.DataContextFactory
+        with org.datacleaner.metamodel.json.JsonDataContextFactory;
 }

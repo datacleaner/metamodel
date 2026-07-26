@@ -16,15 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-module org.apache.metamodel.xml {
-    requires org.apache.metamodel;
+module org.datacleaner.metamodel.xml {
+    requires org.datacleaner.metamodel;
     requires org.slf4j;
     requires java.xml;
     requires static java.desktop;
 
-    exports org.apache.metamodel.xml;
+    exports org.datacleaner.metamodel.xml;
 
-    provides org.apache.metamodel.factory.DataContextFactory
-        with org.apache.metamodel.xml.XmlSaxDataContextFactory,
-             org.apache.metamodel.xml.XmlDomDataContextFactory;
+    provides org.datacleaner.metamodel.factory.DataContextFactory
+        with org.datacleaner.metamodel.xml.XmlSaxDataContextFactory,
+             org.datacleaner.metamodel.xml.XmlDomDataContextFactory;
 }

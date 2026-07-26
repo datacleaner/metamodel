@@ -16,14 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-module org.apache.metamodel.excel {
-    requires org.apache.metamodel;
+module org.datacleaner.metamodel.excel {
+    requires org.datacleaner.metamodel;
     requires org.slf4j;
     requires java.xml;
     requires org.apache.poi.ooxml;
 
-    exports org.apache.metamodel.excel;
+    exports org.datacleaner.metamodel.excel;
 
-    provides org.apache.metamodel.factory.DataContextFactory
-        with org.apache.metamodel.excel.ExcelDataContextFactory;
+    provides org.datacleaner.metamodel.factory.DataContextFactory
+        with org.datacleaner.metamodel.excel.ExcelDataContextFactory;
 }

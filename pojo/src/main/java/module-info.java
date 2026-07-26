@@ -16,12 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-module org.apache.metamodel.pojo {
-    requires org.apache.metamodel;
+module org.datacleaner.metamodel.pojo {
+    requires org.datacleaner.metamodel;
     requires java.sql;
 
-    exports org.apache.metamodel.pojo;
+    exports org.datacleaner.metamodel.pojo;
 
-    provides org.apache.metamodel.factory.DataContextFactory
-        with org.apache.metamodel.pojo.PojoDataContextFactory;
+    provides org.datacleaner.metamodel.factory.DataContextFactory
+        with org.datacleaner.metamodel.pojo.PojoDataContextFactory;
 }

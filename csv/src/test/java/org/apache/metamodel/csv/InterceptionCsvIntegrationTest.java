@@ -16,24 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.metamodel.csv;
+package org.datacleaner.metamodel.csv;
 
 import java.io.File;
 import java.util.Arrays;
 
 import junit.framework.TestCase;
 
-import org.apache.metamodel.UpdateCallback;
-import org.apache.metamodel.UpdateScript;
-import org.apache.metamodel.UpdateableDataContext;
-import org.apache.metamodel.create.TableCreationBuilder;
-import org.apache.metamodel.data.DataSet;
-import org.apache.metamodel.insert.RowInsertionBuilder;
-import org.apache.metamodel.intercept.InterceptableDataContext;
-import org.apache.metamodel.intercept.Interceptors;
-import org.apache.metamodel.intercept.RowInsertionInterceptor;
-import org.apache.metamodel.intercept.TableCreationInterceptor;
-import org.apache.metamodel.schema.Table;
+import org.datacleaner.metamodel.UpdateCallback;
+import org.datacleaner.metamodel.UpdateScript;
+import org.datacleaner.metamodel.UpdateableDataContext;
+import org.datacleaner.metamodel.create.TableCreationBuilder;
+import org.datacleaner.metamodel.data.DataSet;
+import org.datacleaner.metamodel.insert.RowInsertionBuilder;
+import org.datacleaner.metamodel.intercept.InterceptableDataContext;
+import org.datacleaner.metamodel.intercept.Interceptors;
+import org.datacleaner.metamodel.intercept.RowInsertionInterceptor;
+import org.datacleaner.metamodel.intercept.TableCreationInterceptor;
+import org.datacleaner.metamodel.schema.Table;
 
 public class InterceptionCsvIntegrationTest extends TestCase {
 

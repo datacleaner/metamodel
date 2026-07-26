@@ -16,8 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-module org.apache.metamodel.jdbc {
-    requires org.apache.metamodel;
+module org.datacleaner.metamodel.jdbc {
+    requires org.datacleaner.metamodel;
     requires org.slf4j;
     requires java.sql;
     requires commons.pool;
@@ -25,9 +25,9 @@ module org.apache.metamodel.jdbc {
     requires static org.postgresql.jdbc;
     requires static java.desktop;
 
-    exports org.apache.metamodel.jdbc;
-    exports org.apache.metamodel.jdbc.dialects;
+    exports org.datacleaner.metamodel.jdbc;
+    exports org.datacleaner.metamodel.jdbc.dialects;
 
-    provides org.apache.metamodel.factory.DataContextFactory
-        with org.apache.metamodel.jdbc.JdbcDataContextFactory;
+    provides org.datacleaner.metamodel.factory.DataContextFactory
+        with org.datacleaner.metamodel.jdbc.JdbcDataContextFactory;
 }

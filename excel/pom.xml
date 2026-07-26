@@ -32,7 +32,7 @@ under the License.
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
-					<argLine>--add-opens=java.base/java.lang=ALL_UNNAMED --add-opens=java.base/java.io=ALL_UNNAMED --add-opens=org.apache.poi.ooxml/org.apache.poi.xssf.streaming=org.apache.metamodel.excel</argLine>
+					<argLine>--add-opens=java.base/java.lang=ALL_UNNAMED --add-opens=java.base/java.io=ALL_UNNAMED --add-opens=org.apache.poi.ooxml/org.apache.poi.xssf.streaming=org.datacleaner.metamodel.excel</argLine>
 				</configuration>
 			</plugin>
 		</plugins>

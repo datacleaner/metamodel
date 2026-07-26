@@ -16,14 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-module org.apache.metamodel.csv {
-    requires org.apache.metamodel;
+module org.datacleaner.metamodel.csv {
+    requires org.datacleaner.metamodel;
     requires org.slf4j;
     requires com.opencsv;
     requires static java.desktop;
 
-    exports org.apache.metamodel.csv;
+    exports org.datacleaner.metamodel.csv;
 
-    provides org.apache.metamodel.factory.DataContextFactory
-        with org.apache.metamodel.csv.CsvDataContextFactory;
+    provides org.datacleaner.metamodel.factory.DataContextFactory
+        with org.datacleaner.metamodel.csv.CsvDataContextFactory;
 }

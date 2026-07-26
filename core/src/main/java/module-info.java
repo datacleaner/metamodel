@@ -16,36 +16,36 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-module org.apache.metamodel {
+module org.datacleaner.metamodel {
     requires org.slf4j;
     requires java.sql;
     requires static java.desktop;
 
-    exports org.apache.metamodel;
-    exports org.apache.metamodel.annotations;
-    exports org.apache.metamodel.convert;
-    exports org.apache.metamodel.create;
-    exports org.apache.metamodel.data;
-    exports org.apache.metamodel.delete;
-    exports org.apache.metamodel.drop;
-    exports org.apache.metamodel.factory;
-    exports org.apache.metamodel.insert;
-    exports org.apache.metamodel.intercept;
-    exports org.apache.metamodel.query;
-    exports org.apache.metamodel.query.builder;
-    exports org.apache.metamodel.query.parser;
-    exports org.apache.metamodel.schema;
-    exports org.apache.metamodel.schema.builder;
-    exports org.apache.metamodel.schema.naming;
-    exports org.apache.metamodel.update;
-    exports org.apache.metamodel.util;
+    exports org.datacleaner.metamodel;
+    exports org.datacleaner.metamodel.annotations;
+    exports org.datacleaner.metamodel.convert;
+    exports org.datacleaner.metamodel.create;
+    exports org.datacleaner.metamodel.data;
+    exports org.datacleaner.metamodel.delete;
+    exports org.datacleaner.metamodel.drop;
+    exports org.datacleaner.metamodel.factory;
+    exports org.datacleaner.metamodel.insert;
+    exports org.datacleaner.metamodel.intercept;
+    exports org.datacleaner.metamodel.query;
+    exports org.datacleaner.metamodel.query.builder;
+    exports org.datacleaner.metamodel.query.parser;
+    exports org.datacleaner.metamodel.schema;
+    exports org.datacleaner.metamodel.schema.builder;
+    exports org.datacleaner.metamodel.schema.naming;
+    exports org.datacleaner.metamodel.update;
+    exports org.datacleaner.metamodel.util;
 
-    uses org.apache.metamodel.factory.DataContextFactory;
-    uses org.apache.metamodel.factory.ResourceFactory;
+    uses org.datacleaner.metamodel.factory.DataContextFactory;
+    uses org.datacleaner.metamodel.factory.ResourceFactory;
 
-    provides org.apache.metamodel.factory.ResourceFactory
-        with org.apache.metamodel.factory.FileResourceFactory,
-             org.apache.metamodel.factory.ClasspathResourceFactory,
-             org.apache.metamodel.factory.UrlResourceFactory,
-             org.apache.metamodel.factory.InMemoryResourceFactory;
+    provides org.datacleaner.metamodel.factory.ResourceFactory
+        with org.datacleaner.metamodel.factory.FileResourceFactory,
+             org.datacleaner.metamodel.factory.ClasspathResourceFactory,
+             org.datacleaner.metamodel.factory.UrlResourceFactory,
+             org.datacleaner.metamodel.factory.InMemoryResourceFactory;
 }

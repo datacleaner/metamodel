@@ -35,7 +35,7 @@ under the License.
 				<configuration>
 					<archive>
 						<manifestEntries>
-							<Automatic-Module-Name>org.apache.metamodel.full</Automatic-Module-Name>
+							<Automatic-Module-Name>org.datacleaner.metamodel.full</Automatic-Module-Name>
 						</manifestEntries>
 					</archive>
 				</configuration>
