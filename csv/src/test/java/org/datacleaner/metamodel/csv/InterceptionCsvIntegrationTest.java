@@ -27,6 +27,7 @@ import org.datacleaner.metamodel.UpdateCallback;
 import org.datacleaner.metamodel.UpdateScript;
 import org.datacleaner.metamodel.UpdateableDataContext;
 import org.datacleaner.metamodel.create.TableCreationBuilder;
+import org.datacleaner.metamodel.csv.CsvDataContext;
 import org.datacleaner.metamodel.data.DataSet;
 import org.datacleaner.metamodel.insert.RowInsertionBuilder;
 import org.datacleaner.metamodel.intercept.InterceptableDataContext;
