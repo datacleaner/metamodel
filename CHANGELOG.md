@@ -1,3 +1,10 @@
+## [5.3.10](https://github.com/datacleaner/metamodel/compare/MetaModel-5.3.9...MetaModel-5.3.10) (2026-07-26)
+
+
+### Bug Fixes
+
+* Lowercased artifactId ([d682f86](https://github.com/datacleaner/metamodel/commit/d682f86cd0f825eb5278254c169e363bcda86127))
+
 ## [5.3.9](https://github.com/datacleaner/metamodel/compare/MetaModel-5.3.8...MetaModel-5.3.9) (2026-07-26)
 
 
