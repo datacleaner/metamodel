@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>dk.eobjects.commons</groupId>
-	<artifactId>MetaModel</artifactId>
+	<artifactId>metamodel</artifactId>
 	<name>MetaModel</name>
 	<version>1.1-SNAPSHOT</version>
 	<description>

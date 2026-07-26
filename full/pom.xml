@@ -19,12 +19,12 @@ under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<parent>
-		<artifactId>MetaModel</artifactId>
+		<artifactId>metamodel</artifactId>
 		<groupId>org.datacleaner.metamodel</groupId>
 		<version>5.3.9</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>MetaModel-full</artifactId>
+	<artifactId>metamodel-full</artifactId>
 	<name>MetaModel full package, including DataContext factories</name>
 	<description>The full MetaModel package including all supported datastores</description>
 	<build>
@@ -45,47 +45,47 @@ under the License.
 	<dependencies>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
-			<artifactId>MetaModel-core</artifactId>
+			<artifactId>metamodel-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
-			<artifactId>MetaModel-csv</artifactId>
+			<artifactId>metamodel-csv</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
-			<artifactId>MetaModel-excel</artifactId>
+			<artifactId>metamodel-excel</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
-			<artifactId>MetaModel-fixedwidth</artifactId>
+			<artifactId>metamodel-fixedwidth</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
-			<artifactId>MetaModel-jdbc</artifactId>
+			<artifactId>metamodel-jdbc</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
-			<artifactId>MetaModel-json</artifactId>
+			<artifactId>metamodel-json</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
-			<artifactId>MetaModel-pojo</artifactId>
+			<artifactId>metamodel-pojo</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
-			<artifactId>MetaModel-xml</artifactId>
+			<artifactId>metamodel-xml</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
-			<artifactId>MetaModel-arff</artifactId>
+			<artifactId>metamodel-arff</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<!-- Test dependencies -->

@@ -11,18 +11,18 @@
 	language governing permissions and limitations under the License. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<parent>
-		<artifactId>MetaModel</artifactId>
+		<artifactId>metamodel</artifactId>
 		<groupId>org.datacleaner.metamodel</groupId>
 		<version>5.3.9</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>MetaModel-jdbc</artifactId>
+	<artifactId>metamodel-jdbc</artifactId>
 	<name>MetaModel module for relational JDBC databases</name>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
-			<artifactId>MetaModel-core</artifactId>
+			<artifactId>metamodel-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
