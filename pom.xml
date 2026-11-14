@@ -32,8 +32,7 @@ under the License.
 		<junit.version>4.13.2</junit.version>
 		<guava.version>33.8.0-jre</guava.version>
 		<jackson.version>2.23.0</jackson.version>
-		<easymock.version>5.6.0</easymock.version>
-		<httpcomponents.version>4.5.13</httpcomponents.version>
+		<easymock.version>5.7.0</easymock.version>
 		<docker-maven-plugin.version>0.23.0</docker-maven-plugin.version>
 		<skipTests>false</skipTests>
 	</properties>
@@ -432,17 +431,6 @@ under the License.
 				<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
 			<version>5.7.1</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.httpcomponents</groupId>
-				<artifactId>httpclient</artifactId>
-				<version>${httpcomponents.version}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>commons-logging</artifactId>
-						<groupId>commons-logging</groupId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>commons-beanutils</groupId>
