@@ -24,7 +24,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
 
-import org.apache.commons.dbcp.BasicDataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.datacleaner.metamodel.jdbc.JdbcDataContext;
 import org.datacleaner.metamodel.util.FileHelper;
 

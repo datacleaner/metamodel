@@ -34,7 +34,7 @@ import java.util.concurrent.TimeUnit;
 import javax.sql.DataSource;
 import javax.swing.table.TableModel;
 
-import org.apache.commons.dbcp.BasicDataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.datacleaner.metamodel.DataContext;
 import org.datacleaner.metamodel.MetaModelException;
 import org.datacleaner.metamodel.QueryPostprocessDataContext;
@@ -626,8 +626,8 @@ public class JdbcDataContextTest extends JdbcTestCase {
         ds.setDriverClassName("org.hsqldb.jdbcDriver");
         ds.setUrl("jdbc:hsqldb:res:metamodel");
         ds.setInitialSize(connectionPoolSize);
-        ds.setMaxActive(connectionPoolSize);
-        ds.setMaxWait(10000);
+        ds.setMaxTotal(connectionPoolSize);
+        ds.setMaxWaitMillis(10000);
         ds.setMinEvictableIdleTimeMillis(1800000);
         ds.setMinIdle(0);
         ds.setMaxIdle(connectionPoolSize);

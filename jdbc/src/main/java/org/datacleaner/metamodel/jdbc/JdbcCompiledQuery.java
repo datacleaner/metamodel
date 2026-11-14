@@ -22,8 +22,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.apache.commons.pool.impl.GenericObjectPool;
-import org.apache.commons.pool.impl.GenericObjectPool.Config;
+import org.apache.commons.pool2.impl.GenericObjectPool;
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.datacleaner.metamodel.MetaModelException;
 import org.datacleaner.metamodel.jdbc.JdbcUtils.JdbcActionType;
 import org.datacleaner.metamodel.query.CompiledQuery;
@@ -51,14 +51,14 @@ final class JdbcCompiledQuery extends DefaultCompiledQuery implements CompiledQu
         _query = query;
         _sql = dc.getQueryRewriter().rewriteQuery(query);
 
-        final Config config = new Config();
-        config.maxActive = getSystemPropertyValue(JdbcDataContext.SYSTEM_PROPERTY_COMPILED_QUERY_POOL_MAX_SIZE, -1);
-        config.minEvictableIdleTimeMillis = getSystemPropertyValue(
-                JdbcDataContext.SYSTEM_PROPERTY_COMPILED_QUERY_POOL_MIN_EVICTABLE_IDLE_TIME_MILLIS, 500);
-        config.timeBetweenEvictionRunsMillis = getSystemPropertyValue(
-                JdbcDataContext.SYSTEM_PROPERTY_COMPILED_QUERY_POOL_TIME_BETWEEN_EVICTION_RUNS_MILLIS, 1000);
+        final GenericObjectPoolConfig config = new GenericObjectPoolConfig();
+        config.setMaxTotal(getSystemPropertyValue(JdbcDataContext.SYSTEM_PROPERTY_COMPILED_QUERY_POOL_MAX_SIZE, -1));
+        config.setMinEvictableIdleTimeMillis(getSystemPropertyValue(
+                JdbcDataContext.SYSTEM_PROPERTY_COMPILED_QUERY_POOL_MIN_EVICTABLE_IDLE_TIME_MILLIS, 500));
+        config.setTimeBetweenEvictionRunsMillis(getSystemPropertyValue(
+                JdbcDataContext.SYSTEM_PROPERTY_COMPILED_QUERY_POOL_TIME_BETWEEN_EVICTION_RUNS_MILLIS, 1000));
 
-        _pool = new GenericObjectPool<JdbcCompiledQueryLease>(new JdbcCompiledQueryLeaseFactory(dc, _sql), config);
+        _pool = new GenericObjectPool<>(new JdbcCompiledQueryLeaseFactory(dc, _sql), config);
         _closed = false;
 
         logger.debug("Created compiled JDBC query: {}", _sql);

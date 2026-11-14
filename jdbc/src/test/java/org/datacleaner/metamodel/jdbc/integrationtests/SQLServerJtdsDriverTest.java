@@ -26,7 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.dbcp.BasicDataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.datacleaner.metamodel.UpdateCallback;
 import org.datacleaner.metamodel.UpdateScript;
 import org.datacleaner.metamodel.data.DataSet;

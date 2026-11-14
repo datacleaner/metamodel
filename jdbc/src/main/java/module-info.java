@@ -20,7 +20,7 @@ module org.datacleaner.metamodel.jdbc {
     requires org.datacleaner.metamodel;
     requires org.slf4j;
     requires java.sql;
-    requires commons.pool;
+    requires org.apache.commons.pool2;
     requires static com.fasterxml.jackson.databind;
     requires static org.postgresql.jdbc;
     requires static java.desktop;

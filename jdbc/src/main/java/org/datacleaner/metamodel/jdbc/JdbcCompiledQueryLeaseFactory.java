@@ -22,14 +22,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import org.apache.commons.pool.PoolableObjectFactory;
+import org.apache.commons.pool2.PooledObject;
+import org.apache.commons.pool2.PooledObjectFactory;
+import org.apache.commons.pool2.impl.DefaultPooledObject;
 import org.datacleaner.metamodel.jdbc.JdbcUtils.JdbcActionType;
 import org.datacleaner.metamodel.util.FileHelper;
 
 /**
  * Factory for the object pool of {@link JdbcCompiledQueryLease}s.
  */
-final class JdbcCompiledQueryLeaseFactory implements PoolableObjectFactory<JdbcCompiledQueryLease> {
+final class JdbcCompiledQueryLeaseFactory implements PooledObjectFactory<JdbcCompiledQueryLease> {
 
     private final JdbcDataContext _dataContext;
     private final String _sql;
@@ -41,34 +43,35 @@ final class JdbcCompiledQueryLeaseFactory implements PoolableObjectFactory<JdbcC
     
 
     @Override
-    public JdbcCompiledQueryLease makeObject() throws Exception {
+    public PooledObject<JdbcCompiledQueryLease> makeObject() throws Exception {
         try {
             final Connection connection = _dataContext.getConnection();
             final PreparedStatement statement = connection.prepareStatement(_sql);
             final JdbcCompiledQueryLease lease = new JdbcCompiledQueryLease(connection, statement);
-            return lease;
+            return new DefaultPooledObject<>(lease);
         } catch (SQLException e) {
             throw JdbcUtils.wrapException(e, "preparing statement", JdbcActionType.OTHER);
         }
     }
 
     @Override
-    public void destroyObject(JdbcCompiledQueryLease lease) throws Exception {
+    public void destroyObject(PooledObject<JdbcCompiledQueryLease> pooledObject) throws Exception {
+        final JdbcCompiledQueryLease lease = pooledObject.getObject();
         FileHelper.safeClose(lease.getStatement());
         final Connection connection = lease.getConnection();
         _dataContext.close(connection);
     }
 
     @Override
-    public boolean validateObject(JdbcCompiledQueryLease lease) {
+    public boolean validateObject(PooledObject<JdbcCompiledQueryLease> pooledObject) {
         return true;
     }
 
     @Override
-    public void activateObject(JdbcCompiledQueryLease obj) throws Exception {
+    public void activateObject(PooledObject<JdbcCompiledQueryLease> pooledObject) throws Exception {
     }
 
     @Override
-    public void passivateObject(JdbcCompiledQueryLease obj) throws Exception {
+    public void passivateObject(PooledObject<JdbcCompiledQueryLease> pooledObject) throws Exception {
     }
 }
