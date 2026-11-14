@@ -1,3 +1,10 @@
+## [5.3.11](https://github.com/datacleaner/metamodel/compare/MetaModel-5.3.10...MetaModel-5.3.11) (2026-11-14)
+
+
+### Bug Fixes
+
+* Trigger patch releases for non-conventional commit messages ([efb2ce2](https://github.com/datacleaner/metamodel/commit/efb2ce2f23d6df47d95270ff44c512726495904a))
+
 ## [5.3.10](https://github.com/datacleaner/metamodel/compare/MetaModel-5.3.9...MetaModel-5.3.10) (2026-07-26)
 
 
