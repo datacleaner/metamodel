@@ -51,7 +51,7 @@ public class DerbyTest extends TestCase {
     public static void initDerbySettings() throws Exception {
         System.setProperty("derby.storage.tempDirector", FileHelper.getTempDir().getAbsolutePath());
         System.setProperty("derby.stream.error.file", File.createTempFile("metamodel-derby", ".log").getAbsolutePath());
-        Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+        Class.forName("org.apache.derby.iapi.jdbc.AutoloadedDriver");
     }
 
     private Connection _connection;

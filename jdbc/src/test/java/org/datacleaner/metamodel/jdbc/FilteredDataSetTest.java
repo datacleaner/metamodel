@@ -61,11 +61,11 @@ public class FilteredDataSetTest extends JdbcTestCase {
 		dataSet = new FilteredDataSet(dataSet, filter1, filter2);
 		assertTrue(dataSet.next());
 		assertEquals(
-				"Row[values=[487, Signal Collectibles Ltd., Taylor, Sue, 4155554312, 2793 Furth Circle, null, Brisbane, CA, 94217, USA, 1165, 60300.0]]",
+				"Row[values=[487, Signal Collectibles Ltd., Taylor, Sue, 4155554312, 2793 Furth Circle, null, Brisbane, CA, 94217, USA, 1165, 60300]]",
 				dataSet.getRow().toString());
 		assertTrue(dataSet.next());
 		assertEquals(
-				"Row[values=[489, Double Decker Gift Stores, Ltd, Hardy, Thomas, (171) 555-7555, 120 Hanover Sq., null, London, null, WA1 1DP, UK, 1501, 43300.0]]",
+				"Row[values=[489, Double Decker Gift Stores, Ltd, Hardy, Thomas, (171) 555-7555, 120 Hanover Sq., null, London, null, WA1 1DP, UK, 1501, 43300]]",
 				dataSet.getRow().toString());
 		assertFalse(dataSet.next());
 		

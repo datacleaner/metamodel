@@ -52,7 +52,7 @@ public class JdbcColumnTest extends JdbcTestCase {
 			col2.isIndexed();
 			fail("Exception expected");
 		} catch (MetaModelException e) {
-			assertEquals("Could not load indexes: Connection is closed", e.getMessage());
+			assertEquals("Could not load indexes: connection exception: connection does not exist", e.getMessage());
 		}
 	}
 }

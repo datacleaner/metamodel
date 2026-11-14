@@ -104,16 +104,18 @@ public class SqliteTest extends TestCase {
         assertNotNull(schema);
         assertNull(schema.getName());
 
-        assertEquals("[Table[name=system,type=TABLE,remarks=null], "
-                + "Table[name=permission,type=TABLE,remarks=null], "
-                + "Table[name=auth_cookie,type=TABLE,remarks=null], " + "Table[name=session,type=TABLE,remarks=null], "
+        assertEquals("[Table[name=attachment,type=TABLE,remarks=null], "
+                + "Table[name=auth_cookie,type=TABLE,remarks=null], "
+                + "Table[name=component,type=TABLE,remarks=null], " + "Table[name=enum,type=TABLE,remarks=null], "
+                + "Table[name=milestone,type=TABLE,remarks=null], "
+                + "Table[name=node_change,type=TABLE,remarks=null], "
+                + "Table[name=permission,type=TABLE,remarks=null], " + "Table[name=report,type=TABLE,remarks=null], "
+                + "Table[name=revision,type=TABLE,remarks=null], " + "Table[name=session,type=TABLE,remarks=null], "
                 + "Table[name=session_attribute,type=TABLE,remarks=null], "
-                + "Table[name=attachment,type=TABLE,remarks=null], " + "Table[name=wiki,type=TABLE,remarks=null], "
-                + "Table[name=revision,type=TABLE,remarks=null], " + "Table[name=node_change,type=TABLE,remarks=null], "
-                + "Table[name=ticket,type=TABLE,remarks=null], " + "Table[name=ticket_change,type=TABLE,remarks=null], "
-                + "Table[name=ticket_custom,type=TABLE,remarks=null], " + "Table[name=enum,type=TABLE,remarks=null], "
-                + "Table[name=component,type=TABLE,remarks=null], " + "Table[name=milestone,type=TABLE,remarks=null], "
-                + "Table[name=version,type=TABLE,remarks=null], " + "Table[name=report,type=TABLE,remarks=null]]",
+                + "Table[name=system,type=TABLE,remarks=null], " + "Table[name=ticket,type=TABLE,remarks=null], "
+                + "Table[name=ticket_change,type=TABLE,remarks=null], "
+                + "Table[name=ticket_custom,type=TABLE,remarks=null], "
+                + "Table[name=version,type=TABLE,remarks=null], " + "Table[name=wiki,type=TABLE,remarks=null]]",
                 Arrays.toString(schema.getTables().toArray()));
 
         // Index- and key-info is not yet implemented in the JDBC driver
@@ -148,7 +150,7 @@ public class SqliteTest extends TestCase {
 
         Query q = new Query().selectCount().from(wikiTable).where(wikiTable.getColumnByName("name"), OperatorType.LIKE,
                 "Trac%");
-        assertEquals("SELECT COUNT(*) FROM wiki WHERE wiki.name LIKE 'Trac%'", q.toString());
+        assertEquals("SELECT COUNT(*) FROM \"wiki\" WHERE \"wiki\".\"name\" LIKE 'Trac%'", q.toString());
         assertEquals(1, dc.getFetchSizeCalculator().getFetchSize(q));
         assertEquals(37, dc.executeQuery(q).toObjectArrays().get(0)[0]);
 
@@ -156,7 +158,7 @@ public class SqliteTest extends TestCase {
         Column typeColumn = permissionTable.getColumnByName("username");
         q = new Query().select(typeColumn).selectCount().from(permissionTable).groupBy(typeColumn).orderBy(typeColumn);
         assertEquals(
-                "SELECT permission.username, COUNT(*) FROM permission GROUP BY permission.username ORDER BY permission.username ASC",
+                "SELECT \"permission\".\"username\", COUNT(*) FROM \"permission\" GROUP BY \"permission\".\"username\" ORDER BY \"permission\".\"username\" ASC",
                 q.toString());
 
         List<Object[]> data = dc.executeQuery(q).toObjectArrays();
@@ -188,8 +190,9 @@ public class SqliteTest extends TestCase {
         Query q = dc.query().from(wikiTable).select(nameColumn).where(nameColumn).isEquals("m'jello").toQuery();
         assertEquals(16384, dc.getFetchSizeCalculator().getFetchSize(q));
 
-        assertEquals("SELECT wiki.name FROM wiki WHERE wiki.name = 'm'jello'", q.toSql());
-        assertEquals("SELECT wiki.name FROM wiki WHERE wiki.name = 'm''jello'", dc.getQueryRewriter().rewriteQuery(q));
+        assertEquals("SELECT \"wiki\".\"name\" FROM \"wiki\" WHERE \"wiki\".\"name\" = 'm'jello'", q.toSql());
+        assertEquals("SELECT \"wiki\".\"name\" FROM \"wiki\" WHERE \"wiki\".\"name\" = 'm''jello'",
+                dc.getQueryRewriter().rewriteQuery(q));
 
         DataSet ds = dc.executeQuery(q);
         assertFalse(ds.next());

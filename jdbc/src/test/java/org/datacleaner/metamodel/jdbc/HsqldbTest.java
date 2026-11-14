@@ -76,13 +76,13 @@ public class HsqldbTest extends TestCase {
         final JdbcDataContext dataContext = new JdbcDataContext(_connection);
         final DataSet dataSet = dataContext.executeQuery("SELECT APPROXIMATE COUNT(*) FROM customers");
         assertTrue(dataSet.next());
-        assertEquals(122, dataSet.getRow().getValue(0));
+        assertEquals(122, ((Number) dataSet.getRow().getValue(0)).intValue());
         assertFalse(dataSet.next());
     }
 
     public void testTimestampValueInsertSelect() throws Exception {
         Connection connection = DriverManager.getConnection("jdbc:hsqldb:mem:" + getName(), USERNAME, PASSWORD);
-        JdbcTestTemplates.timestampValueInsertSelect(connection, TimeUnit.NANOSECONDS);
+        JdbcTestTemplates.timestampValueInsertSelect(connection, TimeUnit.MICROSECONDS);
     }
 
     public void testCreateInsertAndUpdate() throws Exception {
@@ -100,7 +100,7 @@ public class HsqldbTest extends TestCase {
     public void testGetSchemas() throws Exception {
         assertNotNull(_connection);
         JdbcDataContext dc = new JdbcDataContext(_connection);
-        assertEquals("[Schema[name=INFORMATION_SCHEMA], " + "Schema[name=PUBLIC]]", Arrays.toString(dc.getSchemas().toArray()));
+        assertEquals("[Schema[name=INFORMATION_SCHEMA], " + "Schema[name=PUBLIC], Schema[name=SYSTEM_LOBS]]", Arrays.toString(dc.getSchemas().toArray()));
 
         Schema defaultSchema = dc.getDefaultSchema();
         Schema publicSchema = dc.getSchemaByName("PUBLIC");
@@ -119,18 +119,18 @@ public class HsqldbTest extends TestCase {
 
         Table empTable = publicSchema.getTableByName("EMPLOYEES");
         assertEquals(
-                "[Column[name=EMPLOYEENUMBER,columnNumber=0,type=INTEGER,nullable=false,nativeType=INTEGER,columnSize=0], "
+                "[Column[name=EMPLOYEENUMBER,columnNumber=0,type=INTEGER,nullable=false,nativeType=INTEGER,columnSize=32], "
                         + "Column[name=LASTNAME,columnNumber=1,type=VARCHAR,nullable=false,nativeType=VARCHAR,columnSize=50], "
                         + "Column[name=FIRSTNAME,columnNumber=2,type=VARCHAR,nullable=false,nativeType=VARCHAR,columnSize=50], "
                         + "Column[name=EXTENSION,columnNumber=3,type=VARCHAR,nullable=false,nativeType=VARCHAR,columnSize=10], "
                         + "Column[name=EMAIL,columnNumber=4,type=VARCHAR,nullable=false,nativeType=VARCHAR,columnSize=100], "
                         + "Column[name=OFFICECODE,columnNumber=5,type=VARCHAR,nullable=false,nativeType=VARCHAR,columnSize=20], "
-                        + "Column[name=REPORTSTO,columnNumber=6,type=INTEGER,nullable=true,nativeType=INTEGER,columnSize=0], "
+                        + "Column[name=REPORTSTO,columnNumber=6,type=INTEGER,nullable=true,nativeType=INTEGER,columnSize=32], "
                         + "Column[name=JOBTITLE,columnNumber=7,type=VARCHAR,nullable=false,nativeType=VARCHAR,columnSize=50]]",
                 Arrays.toString(empTable.getColumns().toArray()));
 
         assertEquals(
-                "[Column[name=EMPLOYEENUMBER,columnNumber=0,type=INTEGER,nullable=false,nativeType=INTEGER,columnSize=0]]",
+                "[Column[name=EMPLOYEENUMBER,columnNumber=0,type=INTEGER,nullable=false,nativeType=INTEGER,columnSize=32]]",
                 Arrays.toString(empTable.getPrimaryKeys().toArray()));
 
         // Only a single relationship registered in the database
@@ -159,7 +159,8 @@ public class HsqldbTest extends TestCase {
         assertEquals(2996, tableModel.getRowCount());
 
         assertEquals(110,
-                MetaModelHelper.executeSingleRowQuery(dc, new Query().selectCount().from(productsTable)).getValue(0));
+                ((Number) MetaModelHelper.executeSingleRowQuery(dc, new Query().selectCount().from(productsTable))
+                        .getValue(0)).intValue());
     }
 
     public void testLimit() throws Exception {

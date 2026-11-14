@@ -139,7 +139,7 @@ public class QuerySplitterTest extends JdbcTestCase {
 		List<Query> splitQueries = qs.setMaxRows(1500).splitQuery();
 		assertSameCount(dc, qs, splitQueries);
 		assertEquals(3, splitQueries.size());
-		assertEquals("[1415, 902, 680]",
+		assertEquals("[1415, 875, 707]",
 				Arrays.toString(getCounts(dc, splitQueries)));
 	}
 
