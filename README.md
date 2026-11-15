@@ -8,7 +8,7 @@ unified view of the datastore structure is offered through a single model of sch
 columns and relationships.
 
 <div>
-<img src="http://metamodel.apache.org/img/logo.png" style="float: right; margin-left: 20px;" alt="MetaModel logo" />
+<img src="https://metamodel.apache.org/img/logo.png" style="float: right; margin-left: 20px;" alt="MetaModel logo" />
 </div>
 
 ## Repository layout
