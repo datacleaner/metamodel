@@ -44,7 +44,7 @@ public enum TableType {
 	 */
 	public static TableType getTableType(String literalType) {
 		literalType = literalType.toUpperCase();
-		if ("TABLE".equals(literalType)) {
+		if ("TABLE".equals(literalType) || "BASE TABLE".equals(literalType)) {
 			return TABLE;
 		}
 		if ("VIEW".equals(literalType)) {

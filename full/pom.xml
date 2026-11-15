@@ -70,6 +70,11 @@ under the License.
 		</dependency>
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
+			<artifactId>metamodel-duckdb</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.datacleaner.metamodel</groupId>
 			<artifactId>metamodel-json</artifactId>
 			<version>${project.version}</version>
 		</dependency>
