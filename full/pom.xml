@@ -32,6 +32,7 @@ under the License.
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.4.2</version>
 				<configuration>
 					<archive>
 						<manifestEntries>
@@ -91,6 +92,11 @@ under the License.
 		<dependency>
 			<groupId>org.datacleaner.metamodel</groupId>
 			<artifactId>metamodel-arff</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.datacleaner.metamodel</groupId>
+			<artifactId>metamodel-sas</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<!-- Test dependencies -->

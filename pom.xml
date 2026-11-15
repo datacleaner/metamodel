@@ -24,7 +24,11 @@ under the License.
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		
 		<!-- Maven plugin versions -->
+		<compiler-plugin.version>3.14.0</compiler-plugin.version>
+		<rat.version>0.17</rat.version>
+		<site-plugin.version>3.12.1</site-plugin.version>
 		<javadoc.version>3.3.1</javadoc.version>
+		<enforcer-plugin.version>3.5.0</enforcer-plugin.version>
 		<sshwagon.version>2.6</sshwagon.version>
 		
 		<!-- Dependency versions -->
@@ -62,6 +66,7 @@ under the License.
 		<module>excel</module>
 		<module>csv</module>
 		<module>arff</module>
+		<module>sas</module>
 		<module>json</module>
 		<module>xml</module>
 		<module>jdbc</module>
@@ -146,6 +151,7 @@ under the License.
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${compiler-plugin.version}</version>
 				<configuration>
 					<source>21</source>
 					<target>21</target>
@@ -155,6 +161,7 @@ under the License.
 			<plugin>
 				<groupId>org.apache.rat</groupId>
 				<artifactId>apache-rat-plugin</artifactId>
+				<version>${rat.version}</version>
 				<executions>
 					<execution>
 						<id>rat-verify</id>
@@ -212,6 +219,7 @@ under the License.
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
+				<version>${site-plugin.version}</version>
 				<dependencies>
 					<dependency>
 						<!-- Provide support for scp based deployment of site -->
@@ -225,6 +233,7 @@ under the License.
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${javadoc.version}</version>
 				<executions>
 					<execution>
 						<!-- create aggregate report when "mvn site" is invoked. -->
@@ -245,6 +254,7 @@ under the License.
 				<!-- enforce certain banned dependencies -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>${enforcer-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>enforce-versions</id>
@@ -254,7 +264,7 @@ under the License.
 						<configuration>
 							<rules>
 								<bannedDependencies>
-									<excludes>
+						<excludes>
 										<exclude>commons-logging:commons-logging:compile</exclude>
 										<exclude>org.codehaus.jackson:compile</exclude>
 
@@ -347,20 +357,7 @@ under the License.
 					<groupId>org.apache.rat</groupId>
 					<artifactId>apache-rat-plugin</artifactId>
 					<configuration>
-						<licenses>
-							<license implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
-								<licenseFamilyCategory>ASL20</licenseFamilyCategory>
-								<licenseFamilyName>Apache Software License, 2.0</licenseFamilyName>
-								<notes>Single licensed ASL v2.0</notes>
-								<patterns>
-									<pattern>Licensed to the Apache Software Foundation (ASF) under
-										one
-										or more contributor license agreements.</pattern>
-								</patterns>
-							</license>
-						</licenses>
-						<excludeSubProjects>false</excludeSubProjects>
-						<excludes>
+						<inputExcludes>
 							<exclude>KEYS</exclude>
 							<exclude>.releaserc.json</exclude>
 							<exclude>**/*.md</exclude>
@@ -389,7 +386,7 @@ under the License.
 							<exclude>DEPENDENCIES</exclude>
 							<exclude>DISCLAIMER</exclude>
 							<exclude>neo4j-community-*/**</exclude>
-						</excludes>
+						</inputExcludes>
 					</configuration>
 				</plugin>
 
