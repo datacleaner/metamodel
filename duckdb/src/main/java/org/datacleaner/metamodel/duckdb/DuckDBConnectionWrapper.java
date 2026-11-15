@@ -28,18 +28,13 @@ import java.sql.ResultSet;
 
 /**
  * Utility for wrapping a DuckDB {@link Connection} in order to align its JDBC
- * metadata behaviour with the standard. DuckDB reports tables with the table
- * type "BASE TABLE" instead of the standard "TABLE", and its driver only
- * matches this exact literal when filtering on table types in
- * {@link DatabaseMetaData#getTables}. This wrapper rewrites the "TABLE" type
- * to "BASE TABLE" on the way in. Mapping of the returned table type back to
- * {@link org.datacleaner.metamodel.schema.TableType#TABLE} is handled by
- * {@link org.datacleaner.metamodel.schema.TableType#getTableType(String)}.
+ * metadata behaviour with the standard. Since DuckDB 2.x, a null catalog in
+ * {@link DatabaseMetaData#getTables} makes the driver return tables from all
+ * attached databases (including the "system" catalog), which shadow's the
+ * user's schemas. This wrapper defaults the catalog to the connection's
+ * current catalog.
  */
 final class DuckDBConnectionWrapper {
-
-    private static final String DUCKDB_TABLE_TYPE = "BASE TABLE";
-    private static final String STANDARD_TABLE_TYPE = "TABLE";
 
     private DuckDBConnectionWrapper() {
     }
@@ -63,23 +58,16 @@ final class DuckDBConnectionWrapper {
                     @Override
                     Object invoke(Method method, Object[] args) throws Throwable {
                         if ("getTables".equals(method.getName()) && method.getParameterCount() == 4) {
-                            return method.invoke(target, args[0], args[1], args[2],
-                                    rewriteTableTypes((String[]) args[3]));
+                            // Since DuckDB 2.x, a null catalog makes getTables
+                            // return tables from all attached databases
+                            // (including the "system" catalog), shadowing the
+                            // user's schema. Default to the current catalog.
+                            String catalog = args[0] != null ? (String) args[0] : ((DatabaseMetaData) target).getConnection().getCatalog();
+                            return method.invoke(target, catalog, args[1], args[2], args[3]);
                         }
                         return super.invoke(method, args);
                     }
                 });
-    }
-
-    private static String[] rewriteTableTypes(String[] types) {
-        if (types == null) {
-            return null;
-        }
-        final String[] result = new String[types.length];
-        for (int i = 0; i < types.length; i++) {
-            result[i] = STANDARD_TABLE_TYPE.equals(types[i]) ? DUCKDB_TABLE_TYPE : types[i];
-        }
-        return result;
     }
 
     private abstract static class DelegateInvocationHandler implements InvocationHandler {

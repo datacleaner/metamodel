@@ -37,7 +37,7 @@ under the License.
 		<guava.version>33.8.0-jre</guava.version>
 		<jackson.version>2.23.0</jackson.version>
 		<easymock.version>5.7.0</easymock.version>
-		<duckdb.version>1.4.1.0</duckdb.version>
+		<duckdb.version>2.0.0.1</duckdb.version>
 		<docker-maven-plugin.version>0.23.0</docker-maven-plugin.version>
 		<skipTests>false</skipTests>
 	</properties>
