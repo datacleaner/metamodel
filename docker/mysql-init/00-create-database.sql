@@ -1,0 +1,4 @@
+-- The sakila database is created via the MYSQL_DATABASE environment variable.
+-- The official sakila sample database (schema + data) is loaded from the dumps
+-- in this directory, which originate from:
+-- https://downloads.mysql.com/docs/sakila-db.zip

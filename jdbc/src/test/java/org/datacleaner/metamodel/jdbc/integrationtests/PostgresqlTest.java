@@ -765,9 +765,13 @@ public class PostgresqlTest extends AbstractJdbIntegrationTest {
 
         } catch (Exception e) {
             String message = e.getMessage().replaceAll("\n", " ");
-            assertEquals(
-                    "java.sql.BatchUpdateException: Batch entry 0 INSERT INTO \"public\".\"my_table\" (\"person name\",age) VALUES ('John Doe','42') was aborted: ERROR: column \"age\" is of type integer but expression is of type character varying   Hint: You will need to rewrite or cast the expression.   Position: 64  Call getNextException to see other errors in the batch.",
-                    message);
+            // Assert the stable parts of the exception message; the exact
+            // formatting of the batch insert statement varies between JDBC
+            // driver versions.
+            assertTrue("Message did not contain batch insert statement: " + message,
+                    message.startsWith("java.sql.BatchUpdateException: Batch entry 0 INSERT INTO \"public\".\"my_table\" (\"person name\",age)"));
+            assertTrue("Message did not contain error about type mismatch: " + message,
+                    message.contains("was aborted: ERROR: column \"age\" is of type integer but expression is of type character varying"));
         } finally {
             dc.refreshSchemas();
             if (dc.getTableByQualifiedLabel("my_table") != null) {

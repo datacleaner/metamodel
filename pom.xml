@@ -362,6 +362,12 @@ under the License.
 							<exclude>.releaserc.json</exclude>
 							<exclude>**/*.md</exclude>
 							<exclude>example-metamodel-integrationtest-configuration.properties</exclude>
+							<exclude>docker/metamodel-integrationtest-configuration.properties</exclude>
+							<exclude>docker/postgres-init/**</exclude>
+							<exclude>docker/mysql-init/**</exclude>
+							<exclude>docker-compose.yml</exclude>
+							<exclude>AGENTS.md</exclude>
+							<exclude>**/AGENTS.md</exclude>
 							<exclude>travis-metamodel-integrationtest-configuration.properties</exclude>
 							<exclude>**/src/assembly/metamodel-packaged-assembly-descriptor.xml</exclude>
 							<exclude>**/.gitignore/**</exclude>

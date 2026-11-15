@@ -23,3 +23,55 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+  integration-tests:
+
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: metamodel
+          POSTGRES_PASSWORD: metamodel
+          POSTGRES_DB: metamodel_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U metamodel"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: metamodel
+          MYSQL_DATABASE: sakila
+          MYSQL_USER: metamodel
+          MYSQL_PASSWORD: metamodel
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd "mysqladmin ping -h localhost"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+    - name: Load dellstore2 sample schema into PostgreSQL
+      run: |
+        docker run --rm --network host \
+          -v "$PWD/docker/postgres-init:/initdb:ro" postgres:16 bash -c \
+          "PGPASSWORD=metamodel psql -h localhost -U metamodel -d metamodel_test -f /initdb/01-dellstore2-schema.sql && \
+           gzip -dc /initdb/02-dellstore2-data.sql.gz | PGPASSWORD=metamodel psql -h localhost -U metamodel -d metamodel_test"
+    - name: Enable integration test configuration
+      run: cp docker/metamodel-integrationtest-configuration.properties ~/
+    - name: Run integration tests
+      run: mvn -B -pl jdbc -am test
