@@ -21,7 +21,7 @@ under the License.
 	<parent>
 		<artifactId>metamodel</artifactId>
 		<groupId>org.datacleaner.metamodel</groupId>
-		<version>5.5.2</version>
+		<version>5.5.3-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>metamodel-duckdb</artifactId>
