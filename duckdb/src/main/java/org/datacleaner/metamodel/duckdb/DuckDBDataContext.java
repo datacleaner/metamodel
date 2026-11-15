@@ -29,10 +29,9 @@ import org.datacleaner.metamodel.schema.TableType;
  * A read-only {@link JdbcDataContext} for DuckDB databases. Write operations
  * are not supported by this context.
  *
- * Note that the DuckDB JDBC driver reports its tables with the table type
- * "BASE TABLE" instead of the standard "TABLE". This data context wraps the
- * connection so that table type filtering is aligned and tables of DuckDB are
- * resolved as {@link TableType#TABLE}.
+ * Note that the DuckDB JDBC driver needs its connection wrapped so that table
+ * metadata is scoped to the connection's current catalog, see
+ * {@link DuckDBConnectionWrapper}.
  */
 public class DuckDBDataContext extends JdbcDataContext {
 
