@@ -29,7 +29,7 @@ under the License.
 		<site-plugin.version>3.12.1</site-plugin.version>
 		<javadoc.version>3.3.1</javadoc.version>
 		<enforcer-plugin.version>3.5.0</enforcer-plugin.version>
-		<sshwagon.version>2.6</sshwagon.version>
+		<sshwagon.version>3.5.3</sshwagon.version>
 		
 		<!-- Dependency versions -->
 		<slf4j.version>2.0.20</slf4j.version>
@@ -185,12 +185,12 @@ under the License.
 					<dependency>
 						<groupId>org.apache.maven.scm</groupId>
 						<artifactId>maven-scm-provider-gitexe</artifactId>
-						<version>1.12.2</version>
+						<version>2.2.1</version>
 					</dependency>
 					<dependency>
 						<groupId>org.apache.maven.scm</groupId>
 						<artifactId>maven-scm-api</artifactId>
-						<version>1.12.2</version>
+						<version>2.2.1</version>
 					</dependency>
 				</dependencies>
 			</plugin>
