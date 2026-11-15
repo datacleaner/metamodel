@@ -49,7 +49,7 @@ under the License.
 	</scm>
 	<groupId>org.datacleaner.metamodel</groupId>
 	<artifactId>metamodel</artifactId>
-	<version>5.5.3-SNAPSHOT</version>
+	<version>5.5.3</version>
 	<name>MetaModel parent</name>
 	<description>MetaModel is a library that encapsulates the differences and enhances 
 		the capabilities of different datastores. Rich querying abilities are

@@ -1,3 +1,10 @@
+## [5.5.3](https://github.com/datacleaner/metamodel/compare/MetaModel-5.5.2...MetaModel-5.5.3) (2026-11-15)
+
+
+### Bug Fixes
+
+* Dependency upgrades ([c1f4b61](https://github.com/datacleaner/metamodel/commit/c1f4b61bc13c9b888bd806697494c2eed768f077))
+
 ## [5.5.2](https://github.com/datacleaner/metamodel/compare/MetaModel-5.5.1...MetaModel-5.5.2) (2026-11-15)
 
 
