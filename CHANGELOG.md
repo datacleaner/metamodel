@@ -1,3 +1,10 @@
+# [5.4.0](https://github.com/datacleaner/metamodel/compare/MetaModel-5.3.11...MetaModel-5.4.0) (2026-11-15)
+
+
+### Features
+
+* add read-only DuckDB module ([#17](https://github.com/datacleaner/metamodel/issues/17)) ([875b09c](https://github.com/datacleaner/metamodel/commit/875b09cabeee006be8fc915adce4142c0958f1c4))
+
 ## [5.3.11](https://github.com/datacleaner/metamodel/compare/MetaModel-5.3.10...MetaModel-5.3.11) (2026-11-14)
 
 
