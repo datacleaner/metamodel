@@ -1,3 +1,5 @@
+## [5.5.4](https://github.com/datacleaner/metamodel/compare/MetaModel-5.5.3...MetaModel-5.5.4) (2026-11-15)
+
 ## [5.5.3](https://github.com/datacleaner/metamodel/compare/MetaModel-5.5.2...MetaModel-5.5.3) (2026-11-15)
 
 
