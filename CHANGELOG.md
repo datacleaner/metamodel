@@ -1,3 +1,10 @@
+# [5.5.0](https://github.com/datacleaner/metamodel/compare/MetaModel-5.4.0...MetaModel-5.5.0) (2026-11-15)
+
+
+### Features
+
+* add SAS (.sas7bdat) module ([#18](https://github.com/datacleaner/metamodel/issues/18)) ([1b018af](https://github.com/datacleaner/metamodel/commit/1b018af265cab94101cbff770b663eb43159d373))
+
 # [5.4.0](https://github.com/datacleaner/metamodel/compare/MetaModel-5.3.11...MetaModel-5.4.0) (2026-11-15)
 
 
