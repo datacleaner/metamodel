@@ -1,3 +1,10 @@
+## [5.5.2](https://github.com/datacleaner/metamodel/compare/MetaModel-5.5.1...MetaModel-5.5.2) (2026-11-15)
+
+
+### Bug Fixes
+
+* use https URL for project logo in README ([dd01f13](https://github.com/datacleaner/metamodel/commit/dd01f139234c5eb32ccb06f044a52dbebeacf2f0))
+
 ## [5.5.1](https://github.com/datacleaner/metamodel/compare/MetaModel-5.5.0...MetaModel-5.5.1) (2026-11-15)
 
 # [5.5.0](https://github.com/datacleaner/metamodel/compare/MetaModel-5.4.0...MetaModel-5.5.0) (2026-11-15)
